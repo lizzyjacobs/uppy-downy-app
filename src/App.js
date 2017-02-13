@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserSignUp from './components/user-sign-up'
+import UserDashboard from './components/user-dashboard'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Sign up!</h2>
-        </div>
-        <p className="App-intro">
-          < UserSignUp /> 
-        </p>
-
+      { this.props.children }
       </div>
     );
   }
