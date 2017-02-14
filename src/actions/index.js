@@ -18,9 +18,27 @@ export const createUser = (user) => {
 
 export function createPoll(poll) {
   const newPoll = axios.post(URL + 'polls', {poll: poll}).then( response => response.data )
-  
+
   return {
     type: 'CREATE_POLL',
     payload: newPoll
   }
+}
+
+export function fetchPolls(){
+  const polls = axios.get(URL + 'polls').then( response => response.data )
+
+  return {
+    type: 'FETCH_POLLS',
+    payload: polls
+  }
+}
+
+export function showCurrentPoll(pollId){
+  browserHistory.push(`/polls/${pollId}`)
+  return {
+    type: 'SHOW_CURRENT_POLL',
+    payload: pollId
+  }
+
 }
