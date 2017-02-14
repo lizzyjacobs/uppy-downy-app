@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { createPoll } from '../actions/index'
 import { connect } from 'react-redux'
+import CreatePollOption from './create-poll-option'
 
 class CreatePoll extends Component {
   constructor(){
@@ -11,17 +12,20 @@ class CreatePoll extends Component {
 
   handleSubmit(event){
     event.preventDefault()
-    const poll = {title: this.refs.title.value, optionA: this.refs.optionA.value, optionB: this.refs.optionB.value}
+    //debugger
+    const poll = {title: this.refs.title.value, optionA: this.refs.optionA.refs.text.value, optionB: this.refs.optionB.refs.text.value }
     this.props.createPoll(poll)
+    // this.props.createOption(poll_optionA)
   }
+
 
   render(){
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
           Poll Title: <input type='text' ref='title'/>
-          Option A: <input type='text' ref='optionA' />
-          Option B: <input type='text' ref='optionB' />
+          OptionA: <CreatePollOption ref='optionA'/>
+          OptionB: <CreatePollOption ref='optionB'/>
           <input type='submit' />
         </form>
       </div>

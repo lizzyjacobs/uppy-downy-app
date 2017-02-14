@@ -17,8 +17,8 @@ export const createUser = (user) => {
 }
 
 export function createPoll(poll) {
-  const newPoll = axios.post(URL + 'poll', poll).then( response => response.data )
-
+  const newPoll = axios.post(URL + 'polls', {poll: poll}).then( response => response.data )
+  
   return {
     type: 'CREATE_POLL',
     payload: newPoll
