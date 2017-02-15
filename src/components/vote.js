@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import { createVote } from '../actions'
 
 class Vote extends Component {
-  constructor(props){
-    super(props)
-
-  }
+  // constructor(props){
+  //   super(props)
+  //
+  // }
 
 
   handleVote(event){
@@ -18,7 +18,7 @@ class Vote extends Component {
   render(){
     return(
       <form onSubmit={this.handleVote.bind(this)} >
-        <input type='submit' text='Cast Vote'/>
+        <input type='submit' value='Cast Vote'/>
       </form>
     )
   }

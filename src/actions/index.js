@@ -1,6 +1,10 @@
 import axios from 'axios'
 import { browserHistory } from 'react-router'
 
+
+// axios.defaults.baseURL = 'http://localhost:3000/api/v1'
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+
 const URL = 'http://localhost:3000/api/v1/'
 
 export const createUser = (user) => {
@@ -47,13 +51,22 @@ export function showCurrentPoll(pollId){
 export const loginUser = (user) => {
   const response = axios.post(URL + 'login', user).then((response) => {
     sessionStorage.setItem('jwt', response.data.jwt)
-    browserHistory.push("/dashboard")
+    browserHistory.push('/dashboard')
 
     return response
   })
 
   return {
     type: 'LOGIN_USER',
+    payload: response
+  }
+}
+
+export const fetchUser = () => {
+  const response = axios.get(URL + 'users').then( (response) => response )
+
+  return {
+    type: 'FETCH_USER',
     payload: response
   }
 }

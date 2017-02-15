@@ -6,7 +6,7 @@ class Poll extends Component {
 
   render(){
     var pollOptions = this.props.poll.poll_options.map(
-      option => <div> <p>{option.body}</p> <Vote optionId={option.id}/>  </div>)
+      (option,i) => <div key={i}> <p>{option.body}</p> <Vote optionId={option.id}/>  </div>)
     return(
       <div>
         <h2>{this.props.poll.title}</h2>

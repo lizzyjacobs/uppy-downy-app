@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Route } from 'react-router'
 import App from './App'
 import UserSignUp from './components/user-sign-up'
 import UserDashboard from './components/user-dashboard'

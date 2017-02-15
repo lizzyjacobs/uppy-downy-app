@@ -5,7 +5,7 @@ import currentPollReducer from './current-pole-reducer'
 import votesReducer from './votes-reducer'
 
 export default combineReducers({
-  users: usersReducer,
+  user: usersReducer,
   polls: pollsReducer,
   poll: currentPollReducer,
   votes: votesReducer
