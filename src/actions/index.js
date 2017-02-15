@@ -1,28 +1,18 @@
-import axios from 'axios'
+import adapter from '../adapters'
 import { browserHistory } from 'react-router'
 
-
-// axios.defaults.baseURL = 'http://localhost:3000/api/v1'
-axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
-
-const URL = 'http://localhost:3000/api/v1/'
-
 export const createUser = (user) => {
-  const response = axios.post(URL + 'signup', user).then((userData) => {
-    sessionStorage.setItem('jwt', userData.data.jwt)
-    browserHistory.push("/dashboard")
-    return userData
-  })
+  const response = adapter.createUser(user)
 
   return {
     type: "CREATE_USER",
     payload: response
   }
+
 }
 
 export function createPoll(poll) {
-  const newPoll = axios.post(URL + 'polls', {poll: poll}).then( response => response.data )
-  browserHistory.push(`/polls`)
+  const newPoll = adapter.createPoll(poll)
 
   return {
     type: 'CREATE_POLL',
@@ -31,8 +21,7 @@ export function createPoll(poll) {
 }
 
 export function fetchPolls(){
-  const polls = axios.get(URL + 'polls').then( response => response.data )
-
+  const polls = adapter.fetchPolls()
   return {
     type: 'FETCH_POLLS',
     payload: polls
@@ -49,12 +38,7 @@ export function showCurrentPoll(pollId){
 }
 
 export const loginUser = (user) => {
-  const response = axios.post(URL + 'login', user).then((response) => {
-    sessionStorage.setItem('jwt', response.data.jwt)
-    browserHistory.push('/dashboard')
-
-    return response
-  })
+  const response = adapter.loginUser(user)
 
   return {
     type: 'LOGIN_USER',
@@ -63,7 +47,7 @@ export const loginUser = (user) => {
 }
 
 export const fetchUser = () => {
-  const response = axios.get(URL + 'users').then( (response) => response )
+  const response = adapter.fetchUser()
 
   return {
     type: 'FETCH_USER',
@@ -72,14 +56,12 @@ export const fetchUser = () => {
 }
 
 export function createVote(optionId){
-  let vote={vote: {userId: 1, optionId: optionId}}
-  const response = axios.post(URL + 'votes', vote).then((response) => {
-    browserHistory.push("/polls")
 
-    return response
-  })
+  const response = adapter.createVote(optionId)
+
   return {
     type: "CREATE_VOTE",
     payload: response
   }
+  
 }
