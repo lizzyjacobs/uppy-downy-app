@@ -5,7 +5,7 @@ class Poll extends Component {
 
   render(){
     var pollOptions = this.props.poll.poll_options.map(
-      option => `<p>${option.body}</p>`).join(" ")
+      option => <p>{option.body}</p>)
     return(
       <div>
         <h2>{this.props.poll.title}</h2>

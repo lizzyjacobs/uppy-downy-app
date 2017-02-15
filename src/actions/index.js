@@ -18,6 +18,7 @@ export const createUser = (user) => {
 
 export function createPoll(poll) {
   const newPoll = axios.post(URL + 'polls', {poll: poll}).then( response => response.data )
+  browserHistory.push(`/polls`)
 
   return {
     type: 'CREATE_POLL',
@@ -41,4 +42,18 @@ export function showCurrentPoll(pollId){
     payload: pollId
   }
 
+}
+
+export const loginUser = (user) => {
+  const response = axios.post(URL + 'login', user).then((response) => {
+    sessionStorage.setItem('jwt', response.data.jwt)
+    browserHistory.push("/dashboard")
+
+    return response
+  })
+
+  return {
+    type: 'LOGIN_USER',
+    payload: response
+  }
 }

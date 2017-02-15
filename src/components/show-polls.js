@@ -16,7 +16,6 @@ class ShowPolls extends Component {
   }
 
   render(){
-
     const polls = this.props.polls.map((poll)=>{
       return (<li onClick={this.handleClick.bind(this, poll.id)}>{poll.title}</li>)
     })
