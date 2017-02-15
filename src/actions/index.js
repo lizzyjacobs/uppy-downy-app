@@ -57,3 +57,16 @@ export const loginUser = (user) => {
     payload: response
   }
 }
+
+export function createVote(optionId){
+  let vote={vote: {userId: 1, optionId: optionId}}
+  const response = axios.post(URL + 'votes', vote).then((response) => {
+    browserHistory.push("/polls")
+
+    return response
+  })
+  return {
+    type: "CREATE_VOTE",
+    payload: response
+  }
+}
