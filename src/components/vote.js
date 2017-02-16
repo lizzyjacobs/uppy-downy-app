@@ -10,6 +10,8 @@ class Vote extends Component {
     this.props.createVote(this.props.optionId)
   }
 
+  
+
   render(){
     return(
       <form onSubmit={this.handleVote.bind(this)} >
