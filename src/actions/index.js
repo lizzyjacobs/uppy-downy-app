@@ -50,9 +50,9 @@ export const fetchUser = () => {
 }
 
 export function createVote(optionId){
-  const vote = adapter.createVote(optionId)
+  const poll = adapter.createVote(optionId)
   return {
     type: 'CREATE_VOTE',
-    payload: vote
+    payload: poll
   }
 }

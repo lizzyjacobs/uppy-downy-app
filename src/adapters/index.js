@@ -37,10 +37,8 @@ export default {
   },
 
   createVote: function(optionId){
-
     let vote={vote: {optionId: optionId}}
-
-    return axios.post(URL + 'votes', vote).then((response) => response.data)
+    return axios.patch(URL + 'polls', vote).then((response) => response.data)
 
   }
 

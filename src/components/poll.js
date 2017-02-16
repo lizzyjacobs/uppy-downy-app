@@ -18,7 +18,9 @@ class Poll extends Component {
 }
 
 function mapStateToProps(state) {
+
   const poll = state.polls.find( poll => poll.id === state.poll ) || {}
+  debugger
   return {
     poll: poll
   }

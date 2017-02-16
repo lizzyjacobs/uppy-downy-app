@@ -22,7 +22,7 @@ class NavBar extends Component {
   showAccountLink(){
     if (this.props.user.name){
       return (
-        <div>
+        <div className='nav_links'>
           < Link to='/polls'>Polls</Link>
           < Link to='/dashboard'>{this.props.user.name}</Link>
           < Link onClick={this.handleLogout}>Logout</Link>
