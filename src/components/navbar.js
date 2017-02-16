@@ -9,7 +9,6 @@ import { fetchUser } from '../actions'
 class NavBar extends Component {
 
   componentWillMount(){
-    // debugger
     if (window.sessionStorage.getItem) {
       this.props.fetchUser()
     }
@@ -21,7 +20,6 @@ class NavBar extends Component {
   }
 
   showAccountLink(){
-    // debugger
     if (this.props.user.name){
       return (
         <div>

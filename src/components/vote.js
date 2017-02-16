@@ -8,11 +8,10 @@ class Vote extends Component {
   handleVote(event){
     event.preventDefault()
     createVote(this.props.optionId)
-
   }
 
   render(){
-    
+
     return(
       <form onSubmit={this.handleVote.bind(this)} >
         <input type='submit' value='Cast Vote'/>

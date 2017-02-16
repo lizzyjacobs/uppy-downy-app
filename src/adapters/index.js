@@ -37,14 +37,11 @@ export default {
   },
 
   createVote: function(optionId){
-    let vote={vote: {userId: 1, optionId: optionId}}
 
-    return axios.post(URL + 'votes', vote).then((response) => {
-      browserHistory.push("/polls")
+    let vote={vote: {optionId: optionId}}
 
-      return response
-    })
-    
+    return axios.post(URL + 'votes', vote).then((response) => response.data)
+
   }
 
 

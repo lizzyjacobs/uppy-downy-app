@@ -3,17 +3,14 @@ import { browserHistory } from 'react-router'
 
 export const createUser = (user) => {
   const response = adapter.createUser(user)
-
   return {
     type: "CREATE_USER",
     payload: response
   }
-
 }
 
 export function createPoll(poll) {
   const newPoll = adapter.createPoll(poll)
-
   return {
     type: 'CREATE_POLL',
     payload: newPoll
@@ -34,12 +31,10 @@ export function showCurrentPoll(pollId){
     type: 'SHOW_CURRENT_POLL',
     payload: pollId
   }
-
 }
 
 export const loginUser = (user) => {
   const response = adapter.loginUser(user)
-
   return {
     type: 'LOGIN_USER',
     payload: response
@@ -48,7 +43,6 @@ export const loginUser = (user) => {
 
 export const fetchUser = () => {
   const response = adapter.fetchUser()
-
   return {
     type: 'FETCH_USER',
     payload: response
@@ -56,12 +50,9 @@ export const fetchUser = () => {
 }
 
 export function createVote(optionId){
-
-  const response = adapter.createVote(optionId)
-
+  const vote = adapter.createVote(optionId)
   return {
-    type: "CREATE_VOTE",
-    payload: response
+    type: 'CREATE_VOTE',
+    payload: vote
   }
-  
 }
