@@ -28,7 +28,7 @@ export default {
   },
 
   loginUser: function(user){
-    axios.post(URL + 'login', user).then((response) => {
+    return axios.post(URL + 'login', user).then((response) => {
       sessionStorage.setItem('jwt', response.data.jwt)
       browserHistory.push('/dashboard')
       return response

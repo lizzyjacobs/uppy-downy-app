@@ -11,7 +11,7 @@ export const createUser = (user) => {
 
 export function createPoll(poll) {
   const newPoll = adapter.createPoll(poll)
-  
+
   return {
     type: 'CREATE_POLL',
     payload: newPoll
@@ -39,6 +39,15 @@ export const loginUser = (user) => {
   return {
     type: 'LOGIN_USER',
     payload: response
+  }
+}
+
+export const logoutUser = () => {
+  sessionStorage.removeItem('jwt')
+  browserHistory.push("/login")
+  return {
+    type: 'LOGOUT_USER',
+    payload: {}
   }
 }
 

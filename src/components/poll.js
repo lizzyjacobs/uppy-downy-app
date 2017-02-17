@@ -20,9 +20,9 @@ chooseDisplay(){
   if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
     return <div>
             <h2>Scoreboard</h2>
-            <img src={this.props.poll.poll_options[0].image} />
+            <img src={this.props.poll.poll_options[0].image} alt=""/>
             <h3>{this.props.poll.poll_options[0].text}: {this.countVotes(0)} votes</h3>
-            <img src={this.props.poll.poll_options[1].image} />
+            <img src={this.props.poll.poll_options[1].image} alt=""/>
             <h3>{this.props.poll.poll_options[1].text}: {this.countVotes(1)} votes</h3>
           </div>
   } else {

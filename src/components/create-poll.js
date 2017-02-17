@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux'
 import { createPoll } from '../actions/index'
 import { connect } from 'react-redux'
 import CreatePollOption from './create-poll-option'
-import { browserHistory } from 'react-router'
 
 
 class CreatePoll extends Component {

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 
-import { fetchUser } from '../actions'
+import { fetchUser, logoutUser } from '../actions'
 
 class NavBar extends Component {
 
@@ -15,8 +15,7 @@ class NavBar extends Component {
   }
 
   handleLogout(){
-    sessionStorage.removeItem('jwt')
-    browserHistory.push("/login")
+    this.props.logoutUser()
   }
 
   showAccountLink(){
@@ -26,7 +25,7 @@ class NavBar extends Component {
           < Link to='/polls'>Polls</Link>
           < Link to='/dashboard'>Create a Poll!</Link>
           < Link to='/my-dashboard'> My Polls </Link>
-          < Link onClick={this.handleLogout}>Logout</Link>
+          < Link onClick={this.handleLogout.bind(this)}>Logout</Link>
         </div>
       )
     } else {
@@ -55,7 +54,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchUser}, dispatch)
+  return bindActionCreators({fetchUser, logoutUser}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
