@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navbar'
 
-
 export default class App extends Component {
 
   render() {

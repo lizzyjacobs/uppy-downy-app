@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { createVote } from '../actions'
+import { browserHistory } from 'react-router'
 
 class Vote extends Component {
 
   handleVote(event){
     event.preventDefault()
-    this.props.createVote(this.props.optionId)
+    if (this.props.user.id){
+      this.props.createVote(this.props.optionId)
+    }else{
+      browserHistory.push('/login')
+    }
   }
-
-  
 
   render(){
     return(
@@ -24,7 +27,8 @@ class Vote extends Component {
 function mapStateToProps(state) {
   return {
     poll: state.poll,
-    votes: state.votes
+    votes: state.votes,
+    user: state.user
   }
 }
 
