@@ -5,7 +5,11 @@ export default class CreatePollOption extends Component {
 
   render(){
     return(
-        <input type='text' ref='text'/>
+        <div>
+          Text: <input type='text' ref='text'/>
+          Image URL: <input type='text' ref='image' />
+        </div>
+
     )
   }
 }

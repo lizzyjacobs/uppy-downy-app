@@ -15,7 +15,7 @@ class NavBar extends Component {
   }
 
   handleLogout(){
-    sessionStorage.setItem('jwt', "")
+    sessionStorage.removeItem('jwt')
     browserHistory.push("/login")
   }
 
@@ -24,7 +24,7 @@ class NavBar extends Component {
       return (
         <div className='nav_links'>
           < Link to='/polls'>Polls</Link>
-          < Link to='/dashboard'>{this.props.user.name}</Link>
+          < Link to='/dashboard'>Create a Poll!</Link>
           < Link onClick={this.handleLogout}>Logout</Link>
         </div>
       )

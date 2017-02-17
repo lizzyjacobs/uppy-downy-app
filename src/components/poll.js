@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Vote from './vote'
 import { showCurrentPoll } from '../actions'
+import { bindActionCreators } from 'redux'
 
 
 class Poll extends Component {
 
 handleNextClick(){
-
+  let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
+  this.props.showCurrentPoll(newPollId)
 }
 
 countVotes(option){
@@ -17,12 +19,15 @@ countVotes(option){
 chooseDisplay(){
   if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
     return <div>
-            <h2>{this.props.poll.poll_options[0].body}: {this.countVotes(0)}</h2>
-            <h2>{this.props.poll.poll_options[1].body}: {this.countVotes(1)}</h2>
+            <h2>Scoreboard</h2>
+            <img src={this.props.poll.poll_options[0].image} />
+            <h3>{this.props.poll.poll_options[0].text}: {this.countVotes(0)} votes</h3>
+            <img src={this.props.poll.poll_options[1].image} />
+            <h3>{this.props.poll.poll_options[1].text}: {this.countVotes(1)} votes</h3>
           </div>
   } else {
     var pollOptions = this.props.poll.poll_options.map(
-      (option,i) => <div key={i}> <p>{option.body}</p> <Vote optionId={option.id}/>  </div>)
+      (option,i) => <div key={i}> <p>{option.text}</p> <img src={option.image} alt=""/> <Vote optionId={option.id}/>  </div>)
     return pollOptions
   }
 }
@@ -44,8 +49,13 @@ function mapStateToProps(state) {
   const poll = state.polls.find( poll => poll.id === state.poll ) || {}
   return {
     poll: poll,
-    user: state.user
+    user: state.user,
+    polls: state.polls
   }
 }
 
-export default connect( mapStateToProps )( Poll )
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({showCurrentPoll}, dispatch)
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( Poll )

@@ -11,6 +11,7 @@ export const createUser = (user) => {
 
 export function createPoll(poll) {
   const newPoll = adapter.createPoll(poll)
+  
   return {
     type: 'CREATE_POLL',
     payload: newPoll

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { browserHistory } from 'react-router'
 
-const URL = 'http://uppy-api-pee.herokuapp.com/api/v1/'
+const URL = 'http://localhost:3000/api/v1/'
 
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 
@@ -16,8 +16,11 @@ export default {
   },
 
   createPoll: function(poll){
-    return axios.post(URL + 'polls', {poll: poll}).then( response => response.data )
-    browserHistory.push(`/polls`)
+    return axios.post(URL + 'polls', {poll: poll}).then( response => {
+      browserHistory.push("/polls")
+      return response.data
+    })
+
   },
 
   fetchPolls: function(){
