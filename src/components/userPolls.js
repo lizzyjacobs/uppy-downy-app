@@ -13,7 +13,6 @@ class UserPolls extends Component {
   }
 
   render(){
-    debugger
     const yourPolls = this.props.yourPolls.map((poll)=>{
       return (
         <li onClick={this.handleClick.bind(this, poll.id)}>
