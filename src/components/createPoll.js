@@ -24,6 +24,7 @@ class CreatePoll extends Component {
   render(){
     return(
       <div>
+        Welcome back! Ready to create a poll?
         <form onSubmit={this.handleSubmit}>
           Poll Title: <input type='text' ref='title'/>
           OptionA: <CreatePollOption ref='optionA'/>

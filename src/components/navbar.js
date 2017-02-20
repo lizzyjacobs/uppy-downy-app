@@ -23,7 +23,7 @@ class NavBar extends Component {
       return (
         <div className='nav_links'>
           < Link to='/polls'>Polls</Link>
-          < Link to='/dashboard'>Create a Poll!</Link>
+          < Link to='/create-poll'>Create a Poll!</Link>
           < Link to='/my-dashboard'> My Polls </Link>
           < Link onClick={this.handleLogout.bind(this)}>Logout</Link>
         </div>

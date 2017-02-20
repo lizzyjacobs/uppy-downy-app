@@ -8,6 +8,7 @@ import Poll from './components/poll'
 import Login from './components/login'
 import Vote from './components/vote'
 import UserPolls from './components/userPolls'
+import CreatePoll from './components/createPoll'
 
 
 export default (
@@ -15,7 +16,7 @@ export default (
   <Route path='/' component={App}>
     <Route path="signup" component={UserSignUp} />
     <Route path="login" component={Login} />
-    <Route path="dashboard" component={UserDashboard} />
+    <Route path="create-poll" component={CreatePoll} />
     <Route path="polls" component={ShowPolls}/>
     <Route path="my-dashboard" component={UserPolls} />
     <Route path=":id" component={Poll}>
