@@ -7,24 +7,33 @@ import { bindActionCreators } from 'redux'
 
 class Poll extends Component {
 
-handleNextClick(){
-  let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
-  this.props.showCurrentPoll(newPollId)
-}
-
-countVotes(option){
-  return this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
-}
-
-chooseDisplay(){
-  if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id) || this.props.poll.user_id === this.props.user.id) {
-      return this.props.poll.poll_options.map(
-        (option, i) => <div key={i}> <img src={option.image} alt=""/> <h3>{option.text}: {this.countVotes(i)} votes</h3> </div>)
-  } else {
-    return this.props.poll.poll_options.map(
-      (option,i) => <div key={i}> <p>{option.text}</p> <img src={option.image} alt=""/> <Vote optionId={option.id}/>  </div>)
+  handleNextClick(){
+    let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
+    this.props.showCurrentPoll(newPollId)
   }
-}
+
+  countVotes(option){
+    return this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
+  }
+
+  chooseDisplay(){
+    if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id) || this.props.poll.user_id === this.props.user.id) {
+      return this.props.poll.poll_options.map( (option, i) =>
+        <div key={i}>
+          <img src={option.image} alt=""/>
+          <h3>{option.text}: {this.countVotes(i)} votes</h3>
+        </div>
+      )
+    } else {
+      return this.props.poll.poll_options.map( (option,i) =>
+        <div key={i}>
+          <p>{option.text}</p>
+          <img src={option.image} alt=""/>
+          <Vote optionId={option.id}/>
+        </div>
+      )
+    }
+  }
 
   render(){
     return(

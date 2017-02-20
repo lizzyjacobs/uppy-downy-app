@@ -3,8 +3,34 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import Flexbox from 'flexbox-react'
 
 import { fetchUser, logoutUser } from '../actions'
+
+
+//  STYLES
+const linksContainerStyle = {
+  paddingBottom: '4px'
+}
+
+const linkStyle = {
+  fontFamily: 'Josefin Sans',
+  textTransform: 'uppercase',
+  fontSize: '24px',
+  color: '#2f3135',
+}
+
+const navbarStyle = {
+  padding:'20px'
+}
+
+const logoStyle = {
+  marginRight: '8%',
+  fontFamily: 'Kaushan Script',
+  fontSize: '40px',
+  color: '#ec0928',
+}
+
 
 class NavBar extends Component {
 
@@ -18,32 +44,29 @@ class NavBar extends Component {
     this.props.logoutUser()
   }
 
-  showAccountLink(){
+  showLinks(){
     if (this.props.user.name){
       return (
-        <div className='nav_links'>
-          < Link to='/polls'>Polls</Link>
-          < Link to='/create-poll'>Create a Poll!</Link>
-          < Link to='/my-dashboard'> My Polls </Link>
-          < Link onClick={this.handleLogout.bind(this)}>Logout</Link>
-        </div>
+        <Flexbox element='span' justifyContent='space-between' alignSelf='flex-end' minWidth='50%' style={linksContainerStyle}>
+          <Link to='/polls' style={linkStyle}>Polls</Link>
+          <Link to='/create-poll' style={linkStyle}>New Poll</Link>
+          <Link to='/my-dashboard' style={linkStyle}>My Polls</Link>
+          <Link onClick={this.handleLogout.bind(this)} style={linkStyle}>Logout</Link>
+        </Flexbox>
       )
     } else {
       return (
-        < Link to='/login'>Login/Sign Up</Link>
+        < Link to='/login' style={linkStyle}>Login/Sign Up</Link>
       )
     }
-
   }
 
   render(){
     return (
-      <nav className='navbar navbar-inverse'>
-        <div className='navbar-header'>
-          <Link className='navbar-brand' to="/polls">Uppy Downy Votey App</Link>
-        </div>
-        {this.showAccountLink()}
-      </nav>
+      <Flexbox element='nav' justifyContent='space-between' alignItems='baseline' style={navbarStyle}>
+        <Link to="/polls" style={logoStyle}>Votey</Link>
+        {this.showLinks()}
+      </Flexbox>
     )
   }
 
