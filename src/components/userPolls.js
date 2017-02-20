@@ -11,22 +11,21 @@ class UserPolls extends Component {
   handleClick(pollId){
     this.props.showCurrentPoll(pollId)
   }
-
-  render(){
-    const yourPolls = this.props.yourPolls.map((poll)=>{
-      return (
+// {poll.poll_options.map(option => option.votes.length)}
+  showYourPolls(){
+    let yours = this.props.yourPolls.map((poll) => {
+      return(
         <li onClick={this.handleClick.bind(this, poll.id)}>
-          {poll.poll_options.map(option => option.votes.length)}
-          <div></div>
-          {poll.title}
-
+        {poll.title}
         </li>
       )
     })
+    return yours
+  }
+
+  render(){
     return(
-      <div>
-        <ul>{yourPolls}</ul>
-      </div>
+        <ul>{this.showYourPolls()}</ul>
     )
   }
 
