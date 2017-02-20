@@ -10,7 +10,7 @@ export default {
   createUser: function(user){
     return axios.post(URL + 'signup', user).then((userData) => {
       sessionStorage.setItem('jwt', userData.data.jwt)
-      browserHistory.push("/dashboard")
+      browserHistory.push("/polls")
       return userData
     })
   },
@@ -30,7 +30,7 @@ export default {
   loginUser: function(user){
     return axios.post(URL + 'login', user).then((response) => {
       sessionStorage.setItem('jwt', response.data.jwt)
-      browserHistory.push('/dashboard')
+      browserHistory.push('/polls')
       return response
     })
   },
