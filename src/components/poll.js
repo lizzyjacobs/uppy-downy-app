@@ -17,7 +17,7 @@ countVotes(option){
 }
 
 chooseDisplay(){
-  if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
+  if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id) || this.props.poll.user_id === this.props.user.id) {
       return this.props.poll.poll_options.map(
         (option, i) => <div key={i}> <img src={option.image} alt=""/> <h3>{option.text}: {this.countVotes(i)} votes</h3> </div>)
   } else {
