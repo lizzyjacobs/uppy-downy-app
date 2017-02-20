@@ -13,8 +13,7 @@ class CreatePoll extends Component {
 
   handleSubmit(event){
     event.preventDefault()
-    //debugger
-    const poll = {title: this.refs.title.value, optionAtext: this.refs.optionA.refs.text.value, optionAimage: this.refs.optionA.refs.image.value, optionBtext: this.refs.optionB.refs.text.value, optionBimage: this.refs.optionA.refs.image.value}
+    const poll = {title: this.refs.title.value, optionAtext: this.refs.optionA.refs.text.value, optionAimage: this.refs.optionA.refs.image.value, optionBtext: this.refs.optionB.refs.text.value, optionBimage: this.refs.optionA.refs.image.value, user_id: this.props.user.id}
     this.props.createPoll(poll)
 
     // this.props.createOption(poll_optionA)
@@ -42,7 +41,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    polls: state.polls
+    polls: state.polls,
+    user: state.user
   }
 }
 
