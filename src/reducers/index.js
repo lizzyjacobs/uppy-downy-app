@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import usersReducer from './users-reducer'
-import pollsReducer from './polls-reducer'
-import currentPollReducer from './current-poll-reducer'
-import votesReducer from './votes-reducer'
+import usersReducer from './usersReducer'
+import pollsReducer from './pollsReducer'
+import currentPollReducer from './currentPollReducer'
+import votesReducer from './votesReducer'
 
 export default combineReducers({
   user: usersReducer,

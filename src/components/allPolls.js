@@ -4,7 +4,7 @@ import { fetchPolls, showCurrentPoll } from '../actions'
 
 
 
-class ShowPolls extends Component {
+class AllPolls extends Component {
 
   componentDidMount(){
     this.props.fetchPolls()
@@ -47,4 +47,4 @@ function mapStateToProps(state) {
     polls: state.polls
   }
 }
-export default connect( mapStateToProps, mapDispatchToProps )( ShowPolls )
+export default connect( mapStateToProps, mapDispatchToProps )( AllPolls )
