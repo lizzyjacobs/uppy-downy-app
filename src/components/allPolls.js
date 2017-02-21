@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
 
 import { fetchPolls, showCurrentPoll } from '../actions'
-import { feedPollOptionImageStyle, feedPollStyle, feedImageCropStyle } from '../stylesheet'
+import { feedPollOptionImageStyle, feedPollStyle, feedPollTitleStyle, feedImageCropStyle } from '../stylesheet'
 
 
 class AllPolls extends Component {
@@ -23,11 +23,19 @@ class AllPolls extends Component {
     return pollOptions
   }
 
+  splicedPollTitle(pollTitle){
+    if ( pollTitle.length > 38 ) {
+      return pollTitle.slice(0,35) + '...'
+    } else {
+      return pollTitle
+    }
+  }
+
   render(){
     const polls = this.props.polls.map((poll, i)=>{
       return (
         <li onClick={this.handleClick.bind(this, poll.id)} key={i} style={feedPollStyle}>
-          <h3>{poll.title}</h3>
+          <h3 style={{wordWrap:'break-word'}}>{this.splicedPollTitle(poll.title)}</h3>
           <Flexbox justifyContent='space-around' alignContent='center'>
             {this.displayPollOptions(poll)}
           </Flexbox>

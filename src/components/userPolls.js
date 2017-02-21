@@ -17,11 +17,19 @@ class UserPolls extends Component {
     let yours = this.props.yourPolls.map((poll) => {
       return(
         <li onClick={this.handleClick.bind(this, poll.id)}>
-        {poll.title}
+        {this.splicedPollTitle(poll.title)}
         </li>
       )
     })
     return yours
+  }
+
+  splicedPollTitle(pollTitle){
+    if ( pollTitle.length > 26 ) {
+      return pollTitle.slice(0,23) + '...'
+    } else {
+      return pollTitle
+    }
   }
 
   render(){

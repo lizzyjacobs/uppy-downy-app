@@ -60,8 +60,8 @@ export const logoStyle = {
 
 //****AllPolls
 export const feedPollStyle = {
-  width: '400px',
-  height: '300px',
+  width: '200px',
+  height: 'auto',
   padding: '14px',
   margin: '12px',
   border: 'solid 0px red',
@@ -69,9 +69,16 @@ export const feedPollStyle = {
   background: '#F5F5F5',
 }
 
+export const feedPollTitleStyle = {
+  width: '100%',
+  maxHeight: 72,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+}
+
 export const feedPollOptionImageStyle = {
-  maxWidth: '180px',
-  maxHeight: '180px',
+  maxWidth: '90px',
+  maxHeight: '90px',
   borderRadius: '8px',
 }
 
