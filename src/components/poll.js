@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
 
 import Vote from './vote'
-import { showCurrentPoll } from '../actions'
+import { showCurrentPoll, fetchPolls } from '../actions'
 import {
   pollOptionContainerStyle,
   pollOptionImageStyle,
@@ -14,6 +14,12 @@ import {
 
 
 class Poll extends Component {
+
+  componentWillMount(){
+    this.props.fetchPolls()
+    const id = parseInt(this.props.params.id)
+    this.props.showCurrentPoll(id)
+  }
 
   handleNextClick(){
     let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
@@ -33,21 +39,23 @@ class Poll extends Component {
   }
 
   chooseDisplay(){
-    if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
-      return this.props.poll.poll_options.map( (option, i) =>
-        <div key={i} style={pollOptionContainerStyle}>
-          <img src={option.image} alt="" style={pollOptionImageStyle}/>
-          <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)}</h3>
-        </div>
-      )
-    } else {
-      return this.props.poll.poll_options.map( (option,i) =>
-        <div key={i} style={pollOptionContainerStyle}>
-          <p>{option.text}</p>
-          <img src={option.image} alt="" style={pollOptionImageStyle}/>
-          <Vote optionId={option.id}/>
-        </div>
-      )
+    if(this.props.poll.hasOwnProperty('votes')) {
+      if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
+        return this.props.poll.poll_options.map( (option, i) =>
+          <div key={i} style={pollOptionContainerStyle}>
+            <img src={option.image} alt="" style={pollOptionImageStyle}/>
+            <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)}</h3>
+          </div>
+        )
+      } else {
+        return this.props.poll.poll_options.map( (option,i) =>
+          <div key={i} style={pollOptionContainerStyle}>
+            <p>{option.text}</p>
+            <img src={option.image} alt="" style={pollOptionImageStyle}/>
+            <Vote optionId={option.id}/>
+          </div>
+        )
+      }
     }
   }
 
@@ -56,7 +64,7 @@ class Poll extends Component {
       <div style={{marginBottom: 40}}>
         <h2>{this.props.poll.title}</h2>
         <Flexbox justifyContent='center' alignItems='center' style={{marginBottom:40}}>
-          {this.chooseDisplay()}
+        {this.chooseDisplay()}
         </Flexbox>
         <div style={buttonContainerStyle}>
           <button onClick={this.handleNextClick.bind(this)} style={buttonInputStyle}>Next poll!</button>
@@ -67,8 +75,7 @@ class Poll extends Component {
 
 }
 
-function mapStateToProps(state) {
-
+function mapStateToProps(state, ownProps) {
   const poll = state.polls.find( poll => poll.id === state.poll ) || {}
   return {
     poll: poll,
@@ -78,7 +85,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({showCurrentPoll}, dispatch)
+  return bindActionCreators({showCurrentPoll, fetchPolls}, dispatch)
 }
 
 export default connect( mapStateToProps, mapDispatchToProps )( Poll )

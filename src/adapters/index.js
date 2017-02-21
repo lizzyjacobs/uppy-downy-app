@@ -43,8 +43,7 @@ export default {
     let vote={vote: {optionId: optionId}}
     return axios.patch(URL + 'polls', vote).then((response) => response.data)
 
-  }
-
-
+  },
+  
 
 }

@@ -17,9 +17,10 @@ export default (
     <Route path="signup" component={UserSignUp} />
     <Route path="login" component={Login} />
     <Route path="polls" component={AllPolls}/>
-    <Route path="my-dashboard" component={UserDashboard} />
-    <Route path=":id" component={Poll}>
-      <Route path=":id" component={Vote} />
+    <Route path="polls/:id" component={Poll}>
+      <Route path="vote" component={Vote} />
     </Route>
+    <Route path="my-dashboard" component={UserDashboard} />
+
   </Route>
 )

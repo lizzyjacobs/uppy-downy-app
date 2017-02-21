@@ -19,12 +19,14 @@ export function createPoll(poll) {
 }
 
 export function fetchPolls(){
+
   const polls = adapter.fetchPolls()
   return {
     type: 'FETCH_POLLS',
     payload: polls
   }
 }
+
 
 export function showCurrentPoll(pollId){
   browserHistory.push(`/polls/${pollId}`)
