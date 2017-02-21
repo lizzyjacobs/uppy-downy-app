@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPolls, showCurrentPoll } from '../actions'
+import Flexbox from 'flexbox-react'
 
+import { fetchPolls, showCurrentPoll } from '../actions'
+import { feedPollOptionImageStyle, feedPollStyle, feedImageCropStyle } from '../stylesheet'
 
 
 class AllPolls extends Component {
@@ -14,14 +16,30 @@ class AllPolls extends Component {
     this.props.showCurrentPoll(pollId)
   }
 
+  displayPollOptions(poll){
+    const pollOptions = poll.poll_options.map( (option,i) =>
+      <div style={feedImageCropStyle}>
+        <img key={i} src={option.image} alt="" style={feedPollOptionImageStyle}/>
+      </div>
+    )
+    return pollOptions
+  }
+
   render(){
     const polls = this.props.polls.map((poll, i)=>{
-      return (<li onClick={this.handleClick.bind(this, poll.id)} key={i}>{poll.title}</li>)
+      return (
+        <li onClick={this.handleClick.bind(this, poll.id)} key={i} style={feedPollStyle}>
+          <h3>{poll.title}</h3>
+          {this.displayPollOptions(poll)}
+        </li>
+      )
     })
 
     return (
       <div>
-        <ul>{polls}</ul>
+        <Flexbox element='ul' flexWrap='wrap' alignContent='space-between' justifyContent='space-around'>
+          {polls}
+        </Flexbox>
         { this.props.children }
       </div>
     )

@@ -46,7 +46,7 @@ class NavBar extends Component {
   render(){
     return (
       <Flexbox element='nav' justifyContent='space-between' alignItems='baseline' style={navbarStyle}>
-        <Link to="/polls" style={logoStyle}>Votey</Link>
+        <Link to="/polls" style={logoStyle}>This/That</Link>
         {this.showLinks()}
       </Flexbox>
     )

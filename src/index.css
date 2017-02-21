@@ -9,6 +9,7 @@ ul {
   list-style: none;
 }
 
-input {
-  /*border: none;*/
+input:active, input:focus, input:hover {
+  outline: none;
+
 }

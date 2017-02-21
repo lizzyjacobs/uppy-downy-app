@@ -31,14 +31,39 @@ export const logoStyle = {
   marginRight: '8%',
   fontFamily: 'Kaushan Script',
   fontSize: '40px',
-  color: '#ec0928',
+  color: '#EC0928',
   textDecoration: 'none',
 }
 
 
 
-//****CreatePoll
+//****AllPolls
+export const feedPollStyle = {
+  width: '400px',
+  height: '300px',
+  padding: '14px',
+  margin: '12px',
+  border: 'solid 0px red',
+  borderRadius: '8px',
+  background: '#F5F5F5',
+}
 
+export const feedImageCropStyle = {
+  display: 'inline-block',
+  width: '180px',
+  height: '180px',
+  overflow: 'hidden',
+  verticalAlign: 'middle'
+}
+
+export const feedPollOptionImageStyle = {
+  width: '180px',
+  height: 'auto',
+}
+
+
+
+//****CreatePoll
 export const optionTitleStyle = {
   marginBottom: '0',
 }
