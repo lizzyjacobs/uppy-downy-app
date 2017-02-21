@@ -2,41 +2,14 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { createPoll } from '../actions/index'
 import { connect } from 'react-redux'
+
 import CreatePollOption from './createPollOption'
-
-
-// STYLES
-const textInputStyle = {
-  margin: '20px',
-  padding: '10px',
-  backgroundImage: `url('../../input-bg1.png')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center bottom',
-  border: 'none',
-  textAlign: 'center',
-  fontSize: '1rem',
-}
-
-const optionTitleStyle = {
-  marginBottom: '0',
-}
-
-const submitContainerStyle = {
-  backgroundImage: `url('../../btn-bg-grey.png')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'contain',
-  backgroundPosition: 'center',
-}
-
-const submitInputStyle = {
-  background: 'none',
-  margin: '10px',
-  padding: '10px',
-  border: 'none',
-  textAlign: 'center',
-  fontSize: '1rem',
-  color: 'gray',
-}
+import {
+  textInputStyle,
+  optionTitleStyle,
+  buttonContainerStyle,
+  buttonInputStyle
+} from '../stylesheet'
 
 
 class CreatePoll extends Component {
@@ -64,13 +37,13 @@ class CreatePoll extends Component {
       <div>
         <h3>Ready to create a poll?</h3>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' ref='title' style={textInputStyle} placeholder='Poll Title' size='60'/>
+          <input ref='title' placeholder='Poll Title' style={textInputStyle} size='60'/>
           <p style={optionTitleStyle}>Option A:</p>
           <CreatePollOption ref='optionA'/>
           <p style={optionTitleStyle}>Option B:</p>
           <CreatePollOption ref='optionB'/>
-          <div style={submitContainerStyle}>
-            <input type='submit' style={submitInputStyle}/>
+          <div style={buttonContainerStyle}>
+            <input type='submit' style={buttonInputStyle}/>
           </div>
         </form>
       </div>

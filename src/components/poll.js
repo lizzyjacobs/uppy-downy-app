@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import Vote from './vote'
 import { showCurrentPoll } from '../actions'
 import { bindActionCreators } from 'redux'
+import {
+  pollOptionContainerStyle,
+  pollOptionImageStyle,
+  buttonContainerStyle,
+  buttonInputStyle
+} from '../stylesheet'
 
 
 class Poll extends Component {
@@ -19,16 +25,16 @@ class Poll extends Component {
   chooseDisplay(){
     if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id) || this.props.poll.user_id === this.props.user.id) {
       return this.props.poll.poll_options.map( (option, i) =>
-        <div key={i}>
-          <img src={option.image} alt=""/>
+        <div key={i} style={pollOptionContainerStyle}>
+          <img src={option.image} alt="" style={pollOptionImageStyle}/>
           <h3>{option.text}: {this.countVotes(i)} votes</h3>
         </div>
       )
     } else {
       return this.props.poll.poll_options.map( (option,i) =>
-        <div key={i}>
+        <div key={i} style={pollOptionContainerStyle}>
           <p>{option.text}</p>
-          <img src={option.image} alt=""/>
+          <img src={option.image} alt="" style={pollOptionImageStyle}/>
           <Vote optionId={option.id}/>
         </div>
       )
@@ -37,10 +43,12 @@ class Poll extends Component {
 
   render(){
     return(
-      <div>
+      <div style={{marginBottom: 10}}>
         <h2>{this.props.poll.title}</h2>
         {this.chooseDisplay()}
-        <button onClick={this.handleNextClick.bind(this)}>Try the next poll!</button>
+        <div style={buttonContainerStyle}>
+          <button onClick={this.handleNextClick.bind(this)} style={buttonInputStyle}>Next poll!</button>
+        </div>
       </div>
     )
   }

@@ -6,30 +6,12 @@ import { Link } from 'react-router'
 import Flexbox from 'flexbox-react'
 
 import { fetchUser, logoutUser } from '../actions'
-
-
-//  STYLES
-const linksContainerStyle = {
-  paddingBottom: '4px'
-}
-
-const linkStyle = {
-  fontFamily: 'Josefin Sans',
-  textTransform: 'uppercase',
-  fontSize: '24px',
-  color: '#2f3135',
-}
-
-const navbarStyle = {
-  padding:'20px'
-}
-
-const logoStyle = {
-  marginRight: '8%',
-  fontFamily: 'Kaushan Script',
-  fontSize: '40px',
-  color: '#ec0928',
-}
+import {
+  linksContainerStyle,
+  linkStyle,
+  navbarStyle,
+  logoStyle
+} from '../stylesheet'
 
 
 class NavBar extends Component {
@@ -47,7 +29,7 @@ class NavBar extends Component {
   showLinks(){
     if (this.props.user.name){
       return (
-        <Flexbox element='span' justifyContent='space-between' alignSelf='flex-end' minWidth='50%' style={linksContainerStyle}>
+        <Flexbox justifyContent='space-between' alignSelf='flex-end' minWidth='50%' style={linksContainerStyle}>
           <Link to='/polls' style={linkStyle}>Polls</Link>
           <Link to='/create-poll' style={linkStyle}>New Poll</Link>
           <Link to='/my-dashboard' style={linkStyle}>My Polls</Link>
