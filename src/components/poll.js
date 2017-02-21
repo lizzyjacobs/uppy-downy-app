@@ -18,16 +18,24 @@ class Poll extends Component {
     this.props.showCurrentPoll(newPollId)
   }
 
+  countVotesPercent(option){
+    return Math.round(this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length/this.props.poll.votes.length * 10000)/100
+  }
   countVotes(option){
-    return this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
+    let length = this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
+    if (length===1){
+      return `${length} Vote`
+    }else {
+      return `${length} Votes`
+    }
   }
 
   chooseDisplay(){
-    if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id) || this.props.poll.user_id === this.props.user.id) {
+    if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
       return this.props.poll.poll_options.map( (option, i) =>
         <div key={i} style={pollOptionContainerStyle}>
           <img src={option.image} alt="" style={pollOptionImageStyle}/>
-          <h3>{option.text}: {this.countVotes(i)} votes</h3>
+          <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)}</h3>
         </div>
       )
     } else {
