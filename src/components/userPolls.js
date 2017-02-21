@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPolls, showCurrentPoll } from '../actions'
+import { feedPollStyle } from '../stylesheet'
 
 
 class UserPolls extends Component {
@@ -25,7 +26,10 @@ class UserPolls extends Component {
 
   render(){
     return(
-        <ul>{this.showYourPolls()}</ul>
+      <ul style={{display:'inline-block',margin:0,width:'30%'}}>
+        <h3>Your Polls</h3>
+        {this.showYourPolls()}
+      </ul>
     )
   }
 

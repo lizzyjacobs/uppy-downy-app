@@ -1,5 +1,6 @@
 export const textInputStyle = {
   margin: '20px',
+  width: '50%',
   padding: '10px',
   backgroundImage: `url('../../input-bg1.png')`,
   backgroundRepeat: 'no-repeat',
@@ -7,6 +8,25 @@ export const textInputStyle = {
   border: 'none',
   textAlign: 'center',
   fontSize: '1rem',
+}
+
+export const textInputStyle2 = {
+  margin: 20,
+  width: '50%',
+  padding: 10,
+  backgroundImage: `url('../../input-bg2.png')`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center bottom',
+  border: 'none',
+  textAlign: 'center',
+  fontSize: '1rem',
+}
+
+export const headerStyle = {
+  paddingBottom: 10,
+  backgroundImage: `url('../../input-bg1.png')`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center bottom',
 }
 
 
@@ -24,7 +44,8 @@ export const linkStyle = {
 }
 
 export const navbarStyle = {
-  padding:'20px'
+  marginBottom: '60px',
+  padding:'20px',
 }
 
 export const logoStyle = {
@@ -48,17 +69,10 @@ export const feedPollStyle = {
   background: '#F5F5F5',
 }
 
-export const feedImageCropStyle = {
-  display: 'inline-block',
-  width: '180px',
-  height: '180px',
-  overflow: 'hidden',
-  verticalAlign: 'middle'
-}
-
 export const feedPollOptionImageStyle = {
-  width: '180px',
-  height: 'auto',
+  maxWidth: '180px',
+  maxHeight: '180px',
+  borderRadius: '8px',
 }
 
 
@@ -89,11 +103,14 @@ export const buttonInputStyle = {
 
 //****Poll
 export const pollOptionContainerStyle = {
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  width: '50%',
+  width: '40%',
+  textAlign: '-webkit-center'
 }
 
 export const pollOptionImageStyle = {
-  width: '80%',
+  display: 'block',
+  marginBottom: 20,
+  maxHeight: '400px',
+  maxWidth: '90%',
+  width: 'auto',
 }

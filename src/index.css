@@ -9,7 +9,12 @@ ul {
   list-style: none;
 }
 
-input:active, input:focus, input:hover {
+button:active,
+button:focus,
+button:hover,
+input:active,
+input:focus,
+input:hover
+{
   outline: none;
-
 }

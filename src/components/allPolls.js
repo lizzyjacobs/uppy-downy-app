@@ -18,9 +18,7 @@ class AllPolls extends Component {
 
   displayPollOptions(poll){
     const pollOptions = poll.poll_options.map( (option,i) =>
-      <div style={feedImageCropStyle}>
         <img key={i} src={option.image} alt="" style={feedPollOptionImageStyle}/>
-      </div>
     )
     return pollOptions
   }
@@ -30,7 +28,9 @@ class AllPolls extends Component {
       return (
         <li onClick={this.handleClick.bind(this, poll.id)} key={i} style={feedPollStyle}>
           <h3>{poll.title}</h3>
-          {this.displayPollOptions(poll)}
+          <Flexbox justifyContent='space-around' alignContent='center'>
+            {this.displayPollOptions(poll)}
+          </Flexbox>
         </li>
       )
     })

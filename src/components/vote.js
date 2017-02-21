@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { createVote } from '../actions'
 import { browserHistory } from 'react-router'
+
+import { createVote } from '../actions'
+import { buttonContainerStyle, buttonInputStyle } from '../stylesheet'
 
 class Vote extends Component {
 
@@ -17,8 +19,8 @@ class Vote extends Component {
 
   render(){
     return(
-      <form onSubmit={this.handleVote.bind(this)} >
-        <input type='submit' value='Cast Vote'/>
+      <form onSubmit={this.handleVote.bind(this)} style={buttonContainerStyle}>
+        <input type='submit' value='Cast Vote' style={buttonInputStyle}/>
       </form>
     )
   }

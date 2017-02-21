@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
-import { createUser } from '../actions/index'
 import { connect } from 'react-redux'
+
+import { createUser } from '../actions/index'
+import { textInputStyle, textInputStyle2, buttonContainerStyle, buttonInputStyle } from '../stylesheet'
 
 class UserSignUp extends Component {
   constructor(){
@@ -20,11 +22,13 @@ class UserSignUp extends Component {
       <div>
         <h2>Sign Up!</h2>
         <form onSubmit={this.handleSubmit}>
-          <input ref="name" placeholder="Enter Name"/>
-          <input ref="email" placeholder="Enter Email"/>
-          <input type="password" ref="userPassword" placeholder="Enter Password"/>
-          <input type="password" ref="passwordConfirmation" placeholder="Verify Password"/>
-          <button type="submit">Submit</button>
+          <input ref="name" placeholder="Enter Name" style={textInputStyle}/>
+          <input ref="email" placeholder="Enter Email" style={textInputStyle2}/>
+          <input type="password" ref="userPassword" placeholder="Enter Password" style={textInputStyle}/>
+          <input type="password" ref="passwordConfirmation" placeholder="Verify Password" style={textInputStyle2}/>
+          <div style={buttonContainerStyle}>
+            <button type="submit" style={buttonInputStyle}>Submit</button>
+          </div>
         </form>
       </div>
     )

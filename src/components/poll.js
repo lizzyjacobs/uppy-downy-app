@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Flexbox from 'flexbox-react'
+
 import Vote from './vote'
 import { showCurrentPoll } from '../actions'
-import { bindActionCreators } from 'redux'
 import {
   pollOptionContainerStyle,
   pollOptionImageStyle,
@@ -43,9 +45,11 @@ class Poll extends Component {
 
   render(){
     return(
-      <div style={{marginBottom: 10}}>
+      <div style={{marginBottom: 40}}>
         <h2>{this.props.poll.title}</h2>
-        {this.chooseDisplay()}
+        <Flexbox justifyContent='center' alignItems='center' style={{marginBottom:40}}>
+          {this.chooseDisplay()}
+        </Flexbox>
         <div style={buttonContainerStyle}>
           <button onClick={this.handleNextClick.bind(this)} style={buttonInputStyle}>Next poll!</button>
         </div>

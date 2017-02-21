@@ -34,19 +34,17 @@ class CreatePoll extends Component {
 
   render(){
     return(
-      <div>
+      <form onSubmit={this.handleSubmit} style={{display:'inline-block',width:'60%'}}>
         <h3>Ready to create a poll?</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input ref='title' placeholder='Poll Title' style={textInputStyle} size='60'/>
-          <p style={optionTitleStyle}>Option A:</p>
-          <CreatePollOption ref='optionA'/>
-          <p style={optionTitleStyle}>Option B:</p>
-          <CreatePollOption ref='optionB'/>
-          <div style={buttonContainerStyle}>
-            <input type='submit' style={buttonInputStyle}/>
-          </div>
-        </form>
-      </div>
+        <input ref='title' placeholder='Poll Title' style={textInputStyle}/>
+        <p style={optionTitleStyle}>Option A:</p>
+        <CreatePollOption ref='optionA'/>
+        <p style={optionTitleStyle}>Option B:</p>
+        <CreatePollOption ref='optionB'/>
+        <div style={buttonContainerStyle}>
+          <input type='submit' style={buttonInputStyle}/>
+        </div>
+      </form>
     )
   }
 }
