@@ -78,7 +78,7 @@ class Poll extends Component {
     let voteData = []
     let optionLabels = []
     if ((this.hasVotesData()) && (this.userHasVoted())){
-      this.props.poll.poll_options.map((option,i)=>{
+      this.props.poll.poll_options.forEach((option,i)=>{
         voteData.push(this.countVotes(i))
         optionLabels.push(option.text)
       })

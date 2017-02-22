@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import { fetchPolls, showCurrentPoll } from '../actions'
 
 
 class UserPolls extends Component {
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchPolls()
+  }
+  componentDidMount(){
+    // this.props.fetchPolls()
   }
 
   handleClick(pollId){
+    // debugger
     this.props.showCurrentPoll(pollId)
   }
 // {poll.poll_options.map(option => option.votes.length)}
   showYourPolls(){
-    let yours = this.props.yourPolls.map((poll) => {
+    let yours = this.props.yourPolls.map((poll,i) => {
       return(
-        <li onClick={this.handleClick.bind(this, poll.id)}>
+        <li key={i} onClick={this.handleClick.bind(this, poll.id)}>
         {this.splicedPollTitle(poll.title)}
         </li>
       )
@@ -34,7 +39,7 @@ class UserPolls extends Component {
   render(){
     return(
       <ul style={{display:'inline-block',margin:0,width:'30%'}}>
-        <h3>Your Polls</h3>
+        <h3>YOUR POLLS</h3>
         {this.showYourPolls()}
       </ul>
     )
