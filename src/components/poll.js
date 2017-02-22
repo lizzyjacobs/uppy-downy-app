@@ -77,6 +77,11 @@ class Poll extends Component {
   displayChart(){
     let voteData = []
     let optionLabels = []
+    let chartOptions = {
+      animation:{animateScale:true },
+      maintainAspectRatio: false,
+      rotation: (0.5 * Math.PI)
+    }
     if ((this.hasVotesData()) && (this.userHasVoted())){
       this.props.poll.poll_options.forEach((option,i)=>{
         voteData.push(this.countVotes(i))
@@ -97,7 +102,7 @@ class Poll extends Component {
       data = { labels:['Vote to see results'],datasets:[{data:[0],backgroundColor:['grey']}] }
     }
     return (
-      <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
+      <Doughnut data={data} ref='doughnut' width={200} height={200} options={chartOptions}/>
     )
   }
 
@@ -110,7 +115,6 @@ class Poll extends Component {
           {this.chooseDisplay()}
         </Flexbox>
         <div style={doughnutStyle}>
-          {/* <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/> */}
           {this.displayChart()}
         </div>
         <div style={buttonContainerStyle}>

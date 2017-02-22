@@ -31,7 +31,7 @@ class NavBar extends Component {
       return (
         <Flexbox justifyContent='space-between' alignSelf='center' minWidth='50%' style={linksContainerStyle}>
           <Link to='/polls' style={linkStyle}>Polls</Link>
-          <Link to='/my-dashboard' style={linkStyle}>My Dashboard</Link>
+          <Link to='/my-dashboard' style={linkStyle}>Dashboard</Link>
           <Link onClick={this.handleLogout.bind(this)} style={linkStyle}>Logout</Link>
         </Flexbox>
       )
