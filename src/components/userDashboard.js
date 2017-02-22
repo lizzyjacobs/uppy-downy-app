@@ -27,6 +27,11 @@ class UserDashboard extends Component {
             autoSkip: false,
             minRotation: 30
           }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0
+          }
         }]
       }
     }
@@ -41,13 +46,30 @@ class UserDashboard extends Component {
           label: 'Total Votes',
           data: voteData,
           backgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56",
-            "#EFE721",
-            "#9F1629",
-            "#1A87B9",
-          ]
+            "rgba(185,66,26,0.5)",
+            "rgba(54,162,235,0.5)",
+            "rgba(238,95,69,0.5)",
+            "rgba(255,206,86,0.5)",
+            "rgba(69,238,225,0.5)",
+            "rgba(159,22,41,0.5)",
+            "rgba(219,9,236,0.5)",
+            "rgba(85,238,69,0.5)",
+            "rgba(133,69,238,0.5)",
+            "rgba(43,26,185,0.5)",
+          ],
+          borderColor: [
+            "rgba(185,66,26,0.8)",
+            "rgba(54,162,235,0.8)",
+            "rgba(238,95,69,0.8)",
+            "rgba(255,206,86,0.8)",
+            "rgba(69,238,225,0.8)",
+            "rgba(159,22,41,0.8)",
+            "rgba(219,9,236,0.8)",
+            "rgba(85,238,69,0.8)",
+            "rgba(133,69,238,0.8)",
+            "rgba(43,26,185,0.8)",
+          ],
+          borderWidth: 2
         }]
       }
     } else {
