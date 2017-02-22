@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
-import Chart from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 
 import Vote from './vote'
