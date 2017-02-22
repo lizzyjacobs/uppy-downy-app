@@ -9,6 +9,7 @@ export default {
 
   createUser: function(user){
     return axios.post(URL + 'signup', user).then((userData) => {
+      axios.defaults.headers.common['AUTHORIZATION'] = response.data.jwt
       sessionStorage.setItem('jwt', userData.data.jwt)
       browserHistory.push("/polls")
       return userData
@@ -29,6 +30,7 @@ export default {
 
   loginUser: function(user){
     return axios.post(URL + 'login', user).then((response) => {
+      axios.defaults.headers.common['AUTHORIZATION'] = response.data.jwt
       sessionStorage.setItem('jwt', response.data.jwt)
       browserHistory.push('/polls')
       return response

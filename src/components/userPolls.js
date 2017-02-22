@@ -13,7 +13,6 @@ class UserPolls extends Component {
   }
 
   handleClick(pollId){
-    // debugger
     this.props.showCurrentPoll(pollId)
   }
 // {poll.poll_options.map(option => option.votes.length)}
