@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "chart.js": "^2.5.0",
     "flexbox-react": "^4.2.1",
     "react": "^15.4.2",
+    "react-chartjs-2": "^2.0.0",
     "react-dom": "^15.4.2",
     "react-navbar": "^1.0.0",
     "react-redux": "^5.0.2",

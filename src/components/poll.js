@@ -2,18 +2,28 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
+import Chart from 'chart.js'
+import { Doughnut } from 'react-chartjs-2'
 
 import Vote from './vote'
 import { showCurrentPoll, fetchPolls } from '../actions'
 import {
+  pollContainerStyle,
   pollOptionContainerStyle,
   pollOptionImageStyle,
   buttonContainerStyle,
-  buttonInputStyle
+  buttonInputStyle,
+  doughnutStyle
 } from '../stylesheet'
 
 
 class Poll extends Component {
+  constructor(){
+    super()
+    this.hasVotesData = this.hasVotesData.bind(this)
+    this.userHasVoted = this.userHasVoted.bind(this)
+    this.displayChart = this.displayChart.bind(this)
+  }
 
   componentWillMount(){
     this.props.fetchPolls()
@@ -21,30 +31,35 @@ class Poll extends Component {
     this.props.showCurrentPoll(id)
   }
 
+  hasVotesData(){
+    return this.props.poll.hasOwnProperty('votes')
+  }
+
+  userHasVoted(){
+    return this.props.poll.votes.find( vote => vote.user_id === this.props.user.id )
+  }
+
   handleNextClick(){
     let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
     this.props.showCurrentPoll(newPollId)
+    this.displayChart()
   }
 
   countVotesPercent(option){
     return Math.round(this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length/this.props.poll.votes.length * 10000)/100
   }
+
   countVotes(option){
-    let length = this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
-    if (length===1){
-      return `${length} Vote`
-    }else {
-      return `${length} Votes`
-    }
+    return this.props.poll.votes.filter( vote => vote.poll_option_id === this.props.poll.poll_options[option].id).length
   }
 
   chooseDisplay(){
-    if(this.props.poll.hasOwnProperty('votes')) {
-      if (this.props.poll.votes.find( vote => vote.user_id === this.props.user.id)) {
+    if(this.hasVotesData()) {
+      if (this.userHasVoted()) {
         return this.props.poll.poll_options.map( (option, i) =>
           <div key={i} style={pollOptionContainerStyle}>
             <img src={option.image} alt="" style={pollOptionImageStyle}/>
-            <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)}</h3>
+            <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)} Vote(s)</h3>
           </div>
         )
       } else {
@@ -59,13 +74,48 @@ class Poll extends Component {
     }
   }
 
+  displayChart(){
+    let voteData = []
+    let optionLabels = []
+    if ((this.hasVotesData()) && (this.userHasVoted())){
+      this.props.poll.poll_options.map((option,i)=>{
+        voteData.push(this.countVotes(i))
+        optionLabels.push(option.text)
+      })
+      var data = {
+        labels: optionLabels,
+        datasets: [{
+          data: voteData,
+          backgroundColor: [
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56"
+          ]
+        }]
+      }
+      return (
+        <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
+      )
+    } else {
+      data = { labels:['Vote to see results'],datasets:[{data:[0],backgroundColor:['grey']}] }
+      return (
+        <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
+      )
+    }
+  }
+
   render(){
+
     return(
-      <div style={{marginBottom: 40}}>
-        <h2>{this.props.poll.title}</h2>
+      <div style={pollContainerStyle}>
+        <h2 style={{wordWrap:'break-word'}}>{this.props.poll.title}</h2>
         <Flexbox justifyContent='center' alignItems='center' style={{marginBottom:40}}>
-        {this.chooseDisplay()}
+          {this.chooseDisplay()}
         </Flexbox>
+        <div style={doughnutStyle}>
+          {/* <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/> */}
+          {this.displayChart()}
+        </div>
         <div style={buttonContainerStyle}>
           <button onClick={this.handleNextClick.bind(this)} style={buttonInputStyle}>Next poll!</button>
         </div>

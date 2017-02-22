@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPolls, showCurrentPoll } from '../actions'
-import { feedPollStyle } from '../stylesheet'
 
 
 class UserPolls extends Component {

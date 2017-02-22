@@ -69,13 +69,6 @@ export const feedPollStyle = {
   background: '#F5F5F5',
 }
 
-export const feedPollTitleStyle = {
-  width: '100%',
-  maxHeight: 72,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-}
-
 export const feedPollOptionImageStyle = {
   maxWidth: '90px',
   maxHeight: '90px',
@@ -120,4 +113,8 @@ export const pollOptionImageStyle = {
   maxHeight: '400px',
   maxWidth: '90%',
   width: 'auto',
+}
+
+export const doughnutStyle = {
+  marginBottom: 20
 }
