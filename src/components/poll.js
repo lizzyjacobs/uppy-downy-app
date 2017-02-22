@@ -93,15 +93,12 @@ class Poll extends Component {
           ]
         }]
       }
-      return (
-        <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
-      )
     } else {
       data = { labels:['Vote to see results'],datasets:[{data:[0],backgroundColor:['grey']}] }
-      return (
-        <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
-      )
     }
+    return (
+      <Doughnut data={data} ref='doughnut' width={200} height={200} options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
+    )
   }
 
   render(){
