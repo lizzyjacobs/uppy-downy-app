@@ -6,7 +6,7 @@ import { Bar } from 'react-chartjs-2'
 import { fetchPolls } from '../actions'
 import UserPolls from './userPolls'
 import CreatePoll from './createPoll'
-import { headerStyle } from '../stylesheet'
+import { sideMargins, headerStyle } from '../stylesheet'
 
 
 class UserDashboard extends Component {
@@ -19,6 +19,17 @@ class UserDashboard extends Component {
   displayChart(){
     let voteData = []
     let optionLabels = []
+    let chartOptions = {
+      animation: { animateScale:true },
+      scales: {
+        xAxes: [{
+          ticks: {
+            autoSkip: false,
+            minRotation: 30
+          }
+        }]
+      }
+    }
     if (this.props.yourPolls.length > 0) {
       this.props.yourPolls.forEach((poll,i)=>{
         voteData.push(poll.votes.length)
@@ -43,7 +54,7 @@ class UserDashboard extends Component {
       data = { labels:['Create a Poll and get some votes to see results'],datasets:[{data:[0],backgroundColor:['grey']}] }
     }
     return (
-      <Bar data={data} ref='doughnut' options={ {animation:{animateScale:true }},{ maintainAspectRatio: false } }/>
+      <Bar data={data} ref='doughnut' options={chartOptions}/>
     )
   }
 
@@ -51,7 +62,7 @@ class UserDashboard extends Component {
     return(
       <div>
         <h2 style={headerStyle}>DASHBOARD</h2>
-        <div style={{height:400, width:'92%', marginBottom:20}}>
+        <div style={sideMargins}>
           {this.displayChart()}
         </div>
         <Flexbox justifyContent='space-around' alignContent='center'>

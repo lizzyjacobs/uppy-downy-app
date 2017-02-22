@@ -1,3 +1,8 @@
+export const sideMargins = {
+  marginLeft: 100,
+  marginRight: 100
+}
+
 export const textInputStyle = {
   margin: '20px',
   width: '50%',
@@ -33,7 +38,7 @@ export const headerStyle = {
 
 //****NavBar
 export const linksContainerStyle = {
-  paddingBottom: '4px'
+  // paddingBottom: '4px'
 }
 
 export const linkStyle = {
@@ -44,8 +49,9 @@ export const linkStyle = {
 }
 
 export const navbarStyle = {
-  marginBottom: '60px',
-  padding:'20px',
+  marginBottom: 60,
+  padding: '30px 40px',
+  boxShadow: '0px 4px 4px #CCC',
 }
 
 export const logoStyle = {
@@ -67,6 +73,7 @@ export const feedPollStyle = {
   border: 'solid 0px red',
   borderRadius: '8px',
   background: '#F5F5F5',
+  boxShadow: '4px 4px 4px #CCC',
 }
 
 export const feedPollOptionImageStyle = {
@@ -102,6 +109,11 @@ export const buttonInputStyle = {
 
 
 //****Poll
+export const pollContainerStyle = {
+  marginTop: 0,
+  marginBottom: 60
+}
+
 export const pollOptionContainerStyle = {
   width: '40%',
   textAlign: '-webkit-center'

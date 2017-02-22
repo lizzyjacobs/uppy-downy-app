@@ -7,6 +7,7 @@ import { Doughnut } from 'react-chartjs-2'
 import Vote from './vote'
 import { showCurrentPoll, fetchPolls } from '../actions'
 import {
+  sideMargins,
   pollContainerStyle,
   pollOptionContainerStyle,
   pollOptionImageStyle,
@@ -103,7 +104,7 @@ class Poll extends Component {
   render(){
 
     return(
-      <div style={pollContainerStyle}>
+      <div style={pollContainerStyle, sideMargins}>
         <h2 style={{wordWrap:'break-word'}}>{this.props.poll.title}</h2>
         <Flexbox justifyContent='center' alignItems='center' style={{marginBottom:40}}>
           {this.chooseDisplay()}

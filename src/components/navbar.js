@@ -29,7 +29,7 @@ class NavBar extends Component {
   showLinks(){
     if (this.props.user.name){
       return (
-        <Flexbox justifyContent='space-between' alignSelf='flex-end' minWidth='50%' style={linksContainerStyle}>
+        <Flexbox justifyContent='space-between' alignSelf='center' minWidth='50%' style={linksContainerStyle}>
           <Link to='/polls' style={linkStyle}>Polls</Link>
           <Link to='/my-dashboard' style={linkStyle}>My Dashboard</Link>
           <Link onClick={this.handleLogout.bind(this)} style={linkStyle}>Logout</Link>
@@ -44,7 +44,7 @@ class NavBar extends Component {
 
   render(){
     return (
-      <Flexbox element='nav' justifyContent='space-between' alignItems='baseline' style={navbarStyle}>
+      <Flexbox element='nav' justifyContent='space-between' style={navbarStyle}>
         <Link to="/polls" style={logoStyle}>This/That</Link>
         {this.showLinks()}
       </Flexbox>

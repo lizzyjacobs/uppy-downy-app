@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
 
 import { fetchPolls, showCurrentPoll } from '../actions'
-import { feedPollOptionImageStyle, feedPollStyle } from '../stylesheet'
+import { sideMargins, feedPollOptionImageStyle, feedPollStyle } from '../stylesheet'
 
 
 class AllPolls extends Component {
@@ -45,9 +45,11 @@ class AllPolls extends Component {
 
     return (
       <div>
-        <Flexbox element='ul' flexWrap='wrap' alignContent='space-between' justifyContent='space-around'>
-          {polls}
-        </Flexbox>
+        <ul style={sideMargins}>
+          <Flexbox flexWrap='wrap' alignContent='space-between' justifyContent='space-around'>
+            {polls}
+          </Flexbox>
+        </ul>
         { this.props.children }
       </div>
     )
