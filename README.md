@@ -12,4 +12,4 @@
 + In her dashboard she can see a form to create a brand new poll and she'll also have a list of her previously created polls (if they exist).
 + To help her stay organized on the results of her previous polls, her dashboard will also show a bar chart visualizing the number of votes each of her  polls have received.
 
-This / That is a basic polling app that allows users to create polls and collect votes. Users can also 'vote' on other polls and see how each option stacks up with easy-to-view charts and data.
+Online Link: https://this-that-app.herokuapp.com/
