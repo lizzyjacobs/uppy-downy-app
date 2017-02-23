@@ -32,7 +32,7 @@ class AllPolls extends Component {
   }
 
   render(){
-    const polls = this.props.polls.map((poll, i)=>{
+    const polls = this.props.polls.reverse().map((poll, i)=>{
       return (
         <li onClick={this.handleClick.bind(this, poll.id)} key={i} style={feedPollStyle}>
           <h3 style={{wordWrap:'break-word'}}>{this.splicedPollTitle(poll.title)}</h3>
