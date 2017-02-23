@@ -20,15 +20,23 @@ class CreatePoll extends Component {
 
   handleSubmit(event){
     event.preventDefault()
-    const poll = {
-      title: this.refs.title.value,
-      optionAtext: this.refs.optionA.refs.text.value,
-      optionAimage: this.refs.optionA.refs.image.value,
-      optionBtext: this.refs.optionB.refs.text.value,
-      optionBimage: this.refs.optionB.refs.image.value,
-      user_id: this.props.user.id
+    if (this.refs.title.value !== "" &&
+        this.refs.optionA.refs.text.value !== "" &&
+        this.refs.optionA.refs.image.value !== "" &&
+        this.refs.optionB.refs.text.value !== "" &&
+        this.refs.optionB.refs.image.value !== "" &&
+        this.props.user.id !== ""){
+      const poll = {
+        title: this.refs.title.value,
+        optionAtext: this.refs.optionA.refs.text.value,
+        optionAimage: this.refs.optionA.refs.image.value,
+        optionBtext: this.refs.optionB.refs.text.value,
+        optionBimage: this.refs.optionB.refs.image.value,
+        user_id: this.props.user.id
+      }
+      this.props.createPoll(poll)
     }
-    this.props.createPoll(poll)
+    else {alert('Please Fill All Inputs')}
   }
 
 
