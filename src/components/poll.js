@@ -40,7 +40,7 @@ class Poll extends Component {
   }
 
   handleNextClick(){
-    let newPollId = (this.props.poll.id)%(this.props.polls.length) + 1
+    let newPollId = (this.props.poll.id)%(this.props.polls.length) - 1
     this.props.showCurrentPoll(newPollId)
     this.displayChart()
   }
