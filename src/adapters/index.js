@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { browserHistory } from 'react-router'
 
-const URL = 'https://uppy-api-pee.herokuapp.com/api/v1/'
+// const URL = 'https://uppy-api-pee.herokuapp.com/api/v1/' TODO Switch back when AWS s3 issues are resolved
+const URL = 'http://localhost:3000/api/v1/'
 
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 

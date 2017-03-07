@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Flexbox from 'flexbox-react'
 
 import { fetchPolls, showCurrentPoll } from '../actions'
-import { sideMargins, feedPollOptionImageStyle, feedPollStyle } from '../stylesheet'
+import { sideMargins, feedPollOptionImageStyle, feedPollStyle } from '../stylesheets/stylesheet'
 
 
 class AllPolls extends Component {

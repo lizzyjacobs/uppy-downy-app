@@ -9,7 +9,7 @@ import {
   optionTitleStyle,
   buttonContainerStyle,
   buttonInputStyle
-} from '../stylesheet'
+} from '../stylesheets/stylesheet'
 
 
 class CreatePoll extends Component {

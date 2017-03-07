@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
 import { createVote } from '../actions'
-import { buttonContainerStyle, buttonInputStyle } from '../stylesheet'
+import { buttonContainerStyle, buttonInputStyle } from '../stylesheets/stylesheet'
 
 class Vote extends Component {
 

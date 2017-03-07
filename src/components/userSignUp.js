@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { createUser } from '../actions/index'
-import { textInputStyle, textInputStyle2, buttonContainerStyle, buttonInputStyle } from '../stylesheet'
+import { textInputStyle, textInputStyle2, buttonContainerStyle, buttonInputStyle } from '../stylesheets/stylesheet'
 
 class UserSignUp extends Component {
   constructor(){

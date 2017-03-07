@@ -11,7 +11,7 @@ import {
   linkStyle,
   navbarStyle,
   logoStyle
-} from '../stylesheet'
+} from '../stylesheets/stylesheet'
 
 
 class NavBar extends Component {
@@ -37,7 +37,9 @@ class NavBar extends Component {
       )
     } else {
       return (
-        < Link to='/login' style={linkStyle}>Login/Sign Up</Link>
+        <Flexbox justifyContent='space-between' alignSelf='center' minWidth='50%' style={linksContainerStyle}>
+          <Link to='/login' style={linkStyle}>Login/Sign Up</Link>
+        </Flexbox>
       )
     }
   }

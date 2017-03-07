@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Flexbox from 'flexbox-react'
 
-import { textInputStyle } from '../stylesheet'
+import { textInputStyle } from '../stylesheets/stylesheet'
 
 
 export default class CreatePollOption extends Component {
