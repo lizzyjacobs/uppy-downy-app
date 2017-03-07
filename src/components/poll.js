@@ -40,11 +40,12 @@ class Poll extends Component {
   }
 
   handleNextClick(){
-    // let newPollId = (this.props.poll.id)%(this.props.polls.length) - 1
-    // let newPollId = this.props.polls.length - ((this.props.poll.id)%(this.props.polls.length) - 1)
-    // let newPollId = (this.props.poll.id - 1) % this.props.polls.length
-    let newPollId = (this.props.poll.id - 1) % this.props.polls.length
-    // 25 - (24%25)-1
+    let newPollId = 0
+    if (this.props.poll.id === 1) {
+      newPollId = this.props.polls.length
+    } else {
+      newPollId = this.props.poll.id - 1
+    }
     this.props.showCurrentPoll(newPollId)
     this.displayChart()
   }
