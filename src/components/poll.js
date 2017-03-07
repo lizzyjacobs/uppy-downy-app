@@ -40,10 +40,10 @@ class Poll extends Component {
   }
 
   handleNextClick(){
-    let newPollId =0
-    if(this.props.poll.id===1){
+    let newPollId = 0
+    if (this.props.poll.id === 1) {
       newPollId = this.props.polls.length
-    }else{
+    } else {
       newPollId = this.props.poll.id - 1
     }
     this.props.showCurrentPoll(newPollId)
