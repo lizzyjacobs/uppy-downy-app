@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router'
 import App from './App'
 import UserSignUp from './components/userSignUp'
-import AllPolls from './components/allPolls'
+import PollsContainer from './components/pollsContainer'
 import Poll from './components/poll'
 import Login from './components/userLogin'
 import Vote from './components/vote'
@@ -16,7 +16,7 @@ export default (
   <Route path='/' component={App}>
     <Route path="signup" component={UserSignUp} />
     <Route path="login" component={Login} />
-    <Route path="polls" component={AllPolls}/>
+    <Route path="polls" component={PollsContainer}/>
     <Route path="polls/:id" component={Poll}>
       <Route path="vote" component={Vote} />
     </Route>

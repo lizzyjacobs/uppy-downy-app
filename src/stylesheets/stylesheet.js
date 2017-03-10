@@ -38,17 +38,22 @@ export const headerStyle = {
 
 //****NavBar
 export const linksContainerStyle = {
-  // paddingBottom: '4px'
+  justifyContent: 'flex-end',
+  alignSelf: 'center',
+  minWidth: '50%',
 }
 
 export const linkStyle = {
+  padding: 20,
   fontFamily: 'Josefin Sans',
   textTransform: 'uppercase',
+  textDecoration: 'none',
   fontSize: '24px',
   color: '#2f3135',
 }
 
 export const navbarStyle = {
+  justifyContent: 'space-between',
   marginBottom: 60,
   padding: '30px 40px',
   boxShadow: '0px 4px 4px #CCC',
@@ -64,7 +69,7 @@ export const logoStyle = {
 
 
 
-//****AllPolls
+//****PollsContainer
 export const feedPollStyle = {
   width: '200px',
   height: 'auto',
