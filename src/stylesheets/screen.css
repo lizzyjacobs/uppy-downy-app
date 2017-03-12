@@ -109,84 +109,88 @@ Component Styles
 
 /* line 78, ../sass/breakpoints/_base.scss */
 .linkStyle {
-  padding: 20;
+  padding: 20px;
   font-family: Josefin Sans;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 24px;
-  color: #2f3135;
+  color: #3C3C3C;
 }
 
-/* line 87, ../sass/breakpoints/_base.scss */
+/* line 88, ../sass/breakpoints/_base.scss */
 .navbarStyle {
   justify-content: space-between;
-  margin-bottom: 60;
+  margin-bottom: 60px;
   padding: 30px 40px;
   box-shadow: 0px 4px 4px #CCC;
 }
 
-/* line 94, ../sass/breakpoints/_base.scss */
+/* line 95, ../sass/breakpoints/_base.scss */
 .logoStyle {
   margin-right: 8%;
   font-family: Kaushan Script;
   font-size: 40px;
-  color: #EC0928;
+  color: #ff2955;
   text-decoration: none;
 }
 
-/* line 109, ../sass/breakpoints/_base.scss */
+/* line 110, ../sass/breakpoints/_base.scss */
 .pollsPollStyle {
   width: 80%;
   padding: 4%;
 }
-/* line 113, ../sass/breakpoints/_base.scss */
+/* line 114, ../sass/breakpoints/_base.scss */
 .pollsPollStyle .pollsPollTitle {
   animation: easeUp 0.5s;
   animation-fill-mode: forwards;
 }
-/* line 117, ../sass/breakpoints/_base.scss */
+/* line 118, ../sass/breakpoints/_base.scss */
 .pollsPollStyle .pollImageLeft img {
   animation: easeRight 0.5s;
   animation-fill-mode: forwards;
 }
-/* line 121, ../sass/breakpoints/_base.scss */
+/* line 122, ../sass/breakpoints/_base.scss */
 .pollsPollStyle .pollImageRight img {
   animation: easeLeft 0.5s;
   animation-fill-mode: forwards;
 }
-/* line 127, ../sass/breakpoints/_base.scss */
+/* line 128, ../sass/breakpoints/_base.scss */
 .pollsPollStyle:hover .pollsPollTitle {
   animation: easeDown 1s ease-out;
   animation-fill-mode: forwards;
 }
-/* line 131, ../sass/breakpoints/_base.scss */
+/* line 132, ../sass/breakpoints/_base.scss */
 .pollsPollStyle:hover .pollImageLeft img {
   animation: easeLeft 1s ease-out;
   animation-fill-mode: forwards;
 }
-/* line 135, ../sass/breakpoints/_base.scss */
+/* line 136, ../sass/breakpoints/_base.scss */
 .pollsPollStyle:hover .pollImageRight img {
   animation: easeRight 1s ease-out;
   animation-fill-mode: forwards;
 }
 
-/* line 142, ../sass/breakpoints/_base.scss */
+/* line 143, ../sass/breakpoints/_base.scss */
 .pollsPollTitle {
   position: relative;
   width: 50%;
   top: -10px;
   padding: 12px 24px;
-  background-color: red;
-  box-shadow: 4px 4px 4px rgba(10, 10, 10, 0.5);
+  background-color: white;
+  color: #ff2955;
+  border: 0.5px solid lightgray;
+  border-left: 4px solid #ff2955;
 }
-/* line 150, ../sass/breakpoints/_base.scss */
+/* line 153, ../sass/breakpoints/_base.scss */
 .pollsPollTitle span {
   text-align: right;
   word-wrap: break-word;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
-/* line 157, ../sass/breakpoints/_base.scss */
+/* line 161, ../sass/breakpoints/_base.scss */
 .pollImageFlex {
   display: flex;
   flex-wrap: nowrap;
@@ -196,7 +200,7 @@ Component Styles
   height: 300px;
 }
 
-/* line 166, ../sass/breakpoints/_base.scss */
+/* line 170, ../sass/breakpoints/_base.scss */
 .pollImage {
   display: block;
   max-height: 280px;
@@ -205,12 +209,12 @@ Component Styles
   border-radius: 2px;
   background-color: white;
 }
-/* line 174, ../sass/breakpoints/_base.scss */
+/* line 178, ../sass/breakpoints/_base.scss */
 .pollImage img {
   max-width: 100%;
 }
 
-/* line 179, ../sass/breakpoints/_base.scss */
+/* line 183, ../sass/breakpoints/_base.scss */
 .pollImageLeft {
   min-width: 50%;
   min-height: 50%;
@@ -220,7 +224,7 @@ Component Styles
   margin-right: -10%;
 }
 
-/* line 188, ../sass/breakpoints/_base.scss */
+/* line 192, ../sass/breakpoints/_base.scss */
 .pollImageRight {
   max-width: 80%;
   max-height: 220px;
@@ -228,12 +232,12 @@ Component Styles
   margin-left: -10%;
 }
 
-/* line 199, ../sass/breakpoints/_base.scss */
+/* line 203, ../sass/breakpoints/_base.scss */
 .optionTitleStyle {
   margin-bottom: 0;
 }
 
-/* line 203, ../sass/breakpoints/_base.scss */
+/* line 207, ../sass/breakpoints/_base.scss */
 .buttonContainerStyle {
   background-image: url("%PUBLIC_URL%/btn-bg-grey.png");
   background-repeat: no-repeat;
@@ -241,7 +245,7 @@ Component Styles
   background-position: center;
 }
 
-/* line 210, ../sass/breakpoints/_base.scss */
+/* line 214, ../sass/breakpoints/_base.scss */
 .buttonInputStyle {
   background: none;
   margin: 10px;
@@ -252,19 +256,19 @@ Component Styles
   color: gray;
 }
 
-/* line 223, ../sass/breakpoints/_base.scss */
+/* line 227, ../sass/breakpoints/_base.scss */
 .pollContainerStyle {
   margin-top: 0;
   margin-bottom: 60;
 }
 
-/* line 228, ../sass/breakpoints/_base.scss */
+/* line 232, ../sass/breakpoints/_base.scss */
 .pollOptionContainerStyle {
   width: 40%;
   text-align: -webkit-center;
 }
 
-/* line 233, ../sass/breakpoints/_base.scss */
+/* line 237, ../sass/breakpoints/_base.scss */
 .pollOptionImageStyle {
   display: block;
   margin-bottom: 20;
@@ -273,7 +277,7 @@ Component Styles
   width: auto;
 }
 
-/* line 241, ../sass/breakpoints/_base.scss */
+/* line 245, ../sass/breakpoints/_base.scss */
 .doughnutStyle {
   margin-bottom: 20;
 }

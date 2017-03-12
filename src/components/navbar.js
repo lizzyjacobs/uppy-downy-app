@@ -29,16 +29,16 @@ class NavBar extends Component {
   showLinks(){
     if (this.props.user.name){
       return (
-        <Flexbox style={linksContainerStyle}>
-          <Link to='/polls' style={linkStyle}>Polls</Link>
-          <Link to='/my-dashboard' style={linkStyle}>Dashboard</Link>
-          <Link to='/login' onClick={this.handleLogout.bind(this)} style={linkStyle}>Logout</Link>
+        <Flexbox className="linksContainerStyle">
+          <Link to='/polls' className="linkStyle">Polls</Link>
+          <Link to='/my-dashboard' className="linkStyle">Dashboard</Link>
+          <Link to='/login' onClick={this.handleLogout.bind(this)} className="linkStyle">Logout</Link>
         </Flexbox>
       )
     } else {
       return (
-        <Flexbox style={linksContainerStyle}>
-          <Link to='/login' style={linkStyle}>Login/Sign Up</Link>
+        <Flexbox className="linksContainerStyle">
+          <Link to='/login' className="linkStyle">Login/Sign Up</Link>
         </Flexbox>
       )
     }
@@ -46,8 +46,8 @@ class NavBar extends Component {
 
   render(){
     return (
-      <Flexbox element='nav' style={navbarStyle}>
-        <Link to="/polls" style={logoStyle}>This/That</Link>
+      <Flexbox element='nav' className="navbarStyle">
+        <Link to="/polls" className="logoStyle">This/That</Link>
         {this.showLinks()}
       </Flexbox>
     )
