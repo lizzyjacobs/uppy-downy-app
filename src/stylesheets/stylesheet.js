@@ -70,8 +70,8 @@ export const logoStyle = {
 
 
 //****PollsContainer
-export const feedPollStyle = {
-  width: '200px',
+export const pollsPollStyle = {
+  width: '300px',
   height: 'auto',
   padding: '14px',
   margin: '12px',

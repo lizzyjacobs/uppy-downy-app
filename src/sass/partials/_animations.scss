@@ -1,0 +1,37 @@
+
+
+@keyframes easeUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes easeDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(14px);
+  }
+}
+
+@keyframes easeRight {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(14px);
+  }
+}
+
+@keyframes easeLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-14px);
+  }
+}

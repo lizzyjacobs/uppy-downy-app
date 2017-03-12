@@ -1,0 +1,12 @@
+@import "partials/animations";
+
+
+@import "breakpoints/base";
+
+@media only screen and (min-width: 768px){
+    @import "breakpoints/768up";
+}
+
+@media only screen and (min-width: 1200px) {
+    @import "breakpoints/_1200up";
+}
