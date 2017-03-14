@@ -32,7 +32,7 @@ Component Styles
 
 .sideMargins {
   margin-left: 100;
-  margin-right: 100
+  margin-right: 100;
 }
 
 .textInputStyle {
@@ -68,8 +68,29 @@ Component Styles
 
 
 
-//****NavBar
+/**************************************************
+Nav Bar
+**************************************************/
+
+.navbarStyle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  padding: 30px 40px;
+  box-shadow: 0px 4px 4px #CCC;
+}
+
+.logoStyle {
+  margin-right: 8%;
+  font-family: Kaushan Script;
+  font-size: 40px;
+  color: #ff2955;
+  text-decoration: none;
+}
+
 .linksContainerStyle {
+  display: flex;
   justify-content: flex-end;
   align-self: center;
   min-width: 50%;
@@ -85,31 +106,30 @@ Component Styles
   color: #3C3C3C;
 }
 
-.navbarStyle {
-  justify-content: space-between;
-  margin-bottom: 60px;
-  padding: 30px 40px;
-  box-shadow: 0px 4px 4px #CCC;
-}
-
-.logoStyle {
-  margin-right: 8%;
-  font-family: Kaushan Script;
-  font-size: 40px;
-  color: #ff2955;
-  text-decoration: none;
-}
 
 
+/**************************************************
+Polls List
+**************************************************/
 
 //****PollsContainer
+.pollsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
 
+  width: 92%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 //****PollsPoll
 .pollsPollStyle {
   width: 80%;
-  padding: 0% 4% 12% 4%;
+  padding: 0% 0% 12% 0%;
 
   .pollsPollTitle {
     animation: easeUp 0.5s;
@@ -164,7 +184,7 @@ Component Styles
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 240px;
+  height: 240px/580px * 100vw;
 }
 
 .pollImage {

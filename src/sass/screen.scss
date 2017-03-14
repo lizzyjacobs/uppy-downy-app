@@ -10,3 +10,7 @@
 @media only screen and (min-width: 1200px) {
     @import "breakpoints/_1200up";
 }
+
+@media only screen and (min-width: 1440px) {
+    @import "breakpoints/_1440up";
+}

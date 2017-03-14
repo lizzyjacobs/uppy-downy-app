@@ -1,12 +1,23 @@
+.navbarStyle {
+  margin-bottom: 140px;
+}
+
 .pollsList {
   width: 84%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .pollsPollStyle {
   padding: 0;
   width: 28%;
   height: 26%;
+}
 
+.pollImageFlex {
+  height: 240px/1790px * 100vw;
+}
+
+.pollsPollTitle {
+  span {
+    font-size: 20px/1300px * 100vw;
+  }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Flexbox from 'flexbox-react'
 
 import { fetchPolls, showCurrentPoll } from '../actions'
 import PollsPoll from './pollsPoll'
@@ -22,9 +21,7 @@ class PollsContainer extends Component {
     return (
       <div>
         <ul className="pollsList">
-          <Flexbox flexWrap='wrap' alignContent='space-between' justifyContent='space-around'>
-            {polls}
-          </Flexbox>
+          {polls}
         </ul>
         { this.props.children }
       </div>

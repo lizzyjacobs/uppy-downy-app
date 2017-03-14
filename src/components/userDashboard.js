@@ -18,8 +18,6 @@ class UserDashboard extends Component {
 
   displayChart(){
     let voteData = []
-    let optionAData = []
-    let optionBData = []
     let optionLabels = []
     let chartOptions = {
       animation: { animateScale:true },
