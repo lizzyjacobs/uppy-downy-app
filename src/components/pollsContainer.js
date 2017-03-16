@@ -14,13 +14,13 @@ class PollsContainer extends Component {
   render(){
     const polls = this.props.polls.reverse().map((poll, i)=>{
       return (
-        <PollsPoll poll={poll} i={i} handleClick={this.props.showCurrentPoll} />
+        <PollsPoll poll={poll} key={i} handleClick={this.props.showCurrentPoll} />
       )
     })
 
     return (
       <div>
-        <ul className="pollsList">
+        <ul className="polls">
           {polls}
         </ul>
         { this.props.children }

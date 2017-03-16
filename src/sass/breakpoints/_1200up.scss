@@ -2,21 +2,21 @@
   margin-bottom: 140px;
 }
 
-.pollsList {
+.polls {
   width: 84%;
 }
 
-.pollsPollStyle {
+.feed-poll {
   padding: 0;
   width: 28%;
   height: 26%;
 }
 
-.pollImageFlex {
+.feed-poll__imageFlex {
   height: 240px/1790px * 100vw;
 }
 
-.pollsPollTitle {
+.feed-poll__title {
   span {
     font-size: 20px/1300px * 100vw;
   }

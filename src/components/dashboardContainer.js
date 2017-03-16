@@ -40,7 +40,6 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-
 function mapStateToProps(state){
   const yourPolls = state.polls.filter( poll => poll.user_id === state.user.id)
 

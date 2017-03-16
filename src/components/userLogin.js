@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { loginUser } from '../actions/index'
-import { textInputStyle, textInputStyle2, buttonContainerStyle, buttonInputStyle } from '../stylesheets/stylesheet'
 
 
 class Login extends Component {
@@ -32,14 +31,14 @@ class Login extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='email' ref='email' style={textInputStyle}/>
-          <input type='password' placeholder='password' ref='password' style={textInputStyle2}/>
-          <div style={buttonContainerStyle}>
-            <button type='submit' style={buttonInputStyle}>Login</button>
+          <input type='text' placeholder='email' ref='email' className="textInputStyle"/>
+          <input type='password' placeholder='password' ref='password' className="textInputStyle2"/>
+          <div className="buttonContainerStyle">
+            <button type='submit' className="buttonInputStyle">Login</button>
           </div>
         </form>
-        <div style={buttonContainerStyle}>
-          <button to='/signup' onClick={this.redirectToSignUp} style={buttonInputStyle}>Sign Up</button>
+        <div className="buttonContainerStyle">
+          <button to='/signup' onClick={this.redirectToSignUp} className="buttonInputStyle">Sign Up</button>
         </div>
       </div>
     );

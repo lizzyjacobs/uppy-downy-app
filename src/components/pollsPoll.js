@@ -6,12 +6,12 @@ export default class PollsPoll extends Component {
     let optionA = this.props.poll.poll_options[0]
     let optionB = this.props.poll.poll_options[1]
     return (
-      <div className="pollImageFlex">
-        <div className="pollImageLeft">
-          <img src={optionA.image} className="pollImage" alt={optionA.text}/>
+      <div className="feed-poll__imageFlex">
+        <div className="feed-poll__image--left">
+          <img src={optionA.image} className="feed-poll__image" alt={optionA.text}/>
         </div>
-        <div className="pollImageRight">
-          <img src={optionB.image} className="pollImage" alt={optionB.text}/>
+        <div className="feed-poll__image--right">
+          <img src={optionB.image} className="feed-poll__image" alt={optionB.text}/>
         </div>
       </div>
     )
@@ -27,9 +27,9 @@ export default class PollsPoll extends Component {
 
   render() {
     return (
-      <li key={this.props.i} onClick={() => this.props.handleClick(this.props.poll.id)} className="pollsPollStyle">
+      <li onClick={() => this.props.handleClick(this.props.poll.id)} className="feed-poll">
         {this.displayPollOptions.call(this, this.props.poll)}
-        <div className="pollsPollTitle">
+        <div className="feed-poll__title">
           <span>{this.splicedPollTitle(this.props.poll.title)}</span>
         </div>
       </li>

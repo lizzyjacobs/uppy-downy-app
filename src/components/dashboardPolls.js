@@ -23,7 +23,7 @@ export default class DashboardPolls extends Component {
 
   render(){
     return(
-      <ul style={{display:'inline-block',margin:0,width:'30%'}}>
+      <ul className="dashboard__polls">
         <h3>YOUR POLLS</h3>
         {this.showYourPolls()}
       </ul>
