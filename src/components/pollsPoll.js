@@ -28,9 +28,7 @@ export default class PollsPoll extends Component {
   render() {
     return (
       <li key={this.props.i} onClick={() => this.props.handleClick(this.props.poll.id)} className="pollsPollStyle">
-        {/* <Flexbox justifyContent='space-around' alignContent='center'> */}
-          {this.displayPollOptions.call(this, this.props.poll)}
-        {/* </Flexbox> */}
+        {this.displayPollOptions.call(this, this.props.poll)}
         <div className="pollsPollTitle">
           <span>{this.splicedPollTitle(this.props.poll.title)}</span>
         </div>
