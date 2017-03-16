@@ -1,26 +1,17 @@
 import React, { Component } from 'react'
-import Flexbox from 'flexbox-react'
 
 export default class PollsPoll extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
-  onImageLoad() {
-    // debugger
-  }
-
   displayPollOptions(poll){
+    let optionA = this.props.poll.poll_options[0]
+    let optionB = this.props.poll.poll_options[1]
     return (
       <div className="pollImageFlex">
         <div className="pollImageLeft">
-          {/* <img onLoad={this.onImageLoad.bind(this.props.poll.poll_options[0])} src={this.props.poll.poll_options[0].image} className="pollImage pollImageLeft" /> */}
-          <img onLoad={this.onImageLoad.bind(this.props.poll.poll_options[0])} src={this.props.poll.poll_options[0].image} className="pollImage" />
+          <img src={optionA.image} className="pollImage" alt={optionA.text}/>
         </div>
         <div className="pollImageRight">
-          {/* <img onLoad={this.onImageLoad.bind(this.props.poll.poll_options[1])} src={this.props.poll.poll_options[1].image} className="pollImage pollImageRight" /> */}
-          <img onLoad={this.onImageLoad.bind(this.props.poll.poll_options[1])} src={this.props.poll.poll_options[1].image} className="pollImage" />
+          <img src={optionB.image} className="pollImage" alt={optionB.text}/>
         </div>
       </div>
     )
