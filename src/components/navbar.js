@@ -3,15 +3,8 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import Flexbox from 'flexbox-react'
 
 import { fetchUser, logoutUser } from '../actions'
-import {
-  linksContainerStyle,
-  linkStyle,
-  navbarStyle,
-  logoStyle
-} from '../stylesheets/stylesheet'
 
 
 class NavBar extends Component {
@@ -29,27 +22,27 @@ class NavBar extends Component {
   showLinks(){
     if (this.props.user.name){
       return (
-        <Flexbox style={linksContainerStyle}>
-          <Link to='/polls' style={linkStyle}>Polls</Link>
-          <Link to='/my-dashboard' style={linkStyle}>Dashboard</Link>
-          <Link to='/login' onClick={this.handleLogout.bind(this)} style={linkStyle}>Logout</Link>
-        </Flexbox>
+        <div className="nav__links">
+          <Link to='/polls' className="nav__links__link"><span className="underline">Polls</span></Link>
+          <Link to='/my-dashboard' className="nav__links__link"><span className="underline">Dashboard</span></Link>
+          <Link to='/login' onClick={this.handleLogout.bind(this)} className="nav__links__link"><span className="underline">Logout</span></Link>
+        </div>
       )
     } else {
       return (
-        <Flexbox style={linksContainerStyle}>
-          <Link to='/login' style={linkStyle}>Login/Sign Up</Link>
-        </Flexbox>
+        <div className="nav__links">
+          <Link to='/login' className="nav__links__link">Login/Sign Up</Link>
+        </div>
       )
     }
   }
 
   render(){
     return (
-      <Flexbox element='nav' style={navbarStyle}>
-        <Link to="/polls" style={logoStyle}>This/That</Link>
+      <nav className="nav">
+        <Link to="/polls" className="nav__logo">This/That</Link>
         {this.showLinks()}
-      </Flexbox>
+      </nav>
     )
   }
 

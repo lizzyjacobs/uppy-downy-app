@@ -1,0 +1,36 @@
+.nav {
+  margin-bottom: 140px;
+}
+
+.dashboard__chart {
+  width: 80%;
+  max-width: 944px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard__contents {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.polls {
+  width: 84%;
+}
+
+.feed-poll {
+  padding: 0;
+  width: 28%;
+  height: 26%;
+}
+
+.feed-poll__imageFlex {
+  height: 240px/1790px * 100vw;
+}
+
+.feed-poll__title {
+  span {
+    font-size: 20px/1300px * 100vw;
+  }
+}

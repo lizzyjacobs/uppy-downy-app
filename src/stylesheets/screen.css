@@ -1,0 +1,485 @@
+@keyframes easeUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes easeDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(14px);
+  }
+}
+@keyframes easeRight {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(14px);
+  }
+}
+@keyframes easeLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-14px);
+  }
+}
+/* line 45, ../sass/partials/_animations.scss */
+.underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+/* line 50, ../sass/partials/_animations.scss */
+.underline:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -5%;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  transition: width 0s ease, background 1s ease;
+  opacity: 0.5;
+}
+
+/* line 61, ../sass/partials/_animations.scss */
+.underline:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -5%;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: silver;
+  transition: width 1s ease;
+  opacity: 0.5;
+}
+
+/* line 73, ../sass/partials/_animations.scss */
+.underline:hover:before {
+  width: 110%;
+  background: #ff2955;
+  transition: width 1s ease;
+}
+
+/* line 78, ../sass/partials/_animations.scss */
+.underline:hover:after {
+  width: 110%;
+  background: transparent;
+  transition: all 0s ease;
+}
+
+/****************************************************************************************************
+Base Styles
+****************************************************************************************************/
+/* line 5, ../sass/breakpoints/_base.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Josefin Sans, sans-serif;
+  font-size: 20px;
+}
+
+/* line 12, ../sass/breakpoints/_base.scss */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 17, ../sass/breakpoints/_base.scss */
+button:active,
+button:focus,
+button:hover,
+input:active,
+input:focus,
+input:hover {
+  outline: none;
+}
+
+/****************************************************************************************************
+Component Styles
+****************************************************************************************************/
+/* line 33, ../sass/breakpoints/_base.scss */
+.sideMargins {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* line 38, ../sass/breakpoints/_base.scss */
+.text-input {
+  margin: 20px;
+  width: 80%;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* line 49, ../sass/breakpoints/_base.scss */
+.text-input--1 {
+  background-image: url("/input-bg1.png");
+}
+
+/* line 53, ../sass/breakpoints/_base.scss */
+.text-input--2 {
+  background-image: url("/input-bg2.png");
+}
+
+/* line 57, ../sass/breakpoints/_base.scss */
+.button-container {
+  background-image: url("/btn-bg-grey.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* line 64, ../sass/breakpoints/_base.scss */
+.button-container__input {
+  background: none;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  color: gray;
+}
+
+/**************************************************
+  Nav Bar
+**************************************************/
+/* line 80, ../sass/breakpoints/_base.scss */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  padding: 30px 40px;
+  box-shadow: 0px 4px 4px #CCC;
+}
+
+/* line 89, ../sass/breakpoints/_base.scss */
+.nav__logo {
+  margin-right: 8%;
+  font-family: Kaushan Script;
+  font-size: 40px;
+  color: #ff2955;
+  text-decoration: none;
+}
+
+/* line 97, ../sass/breakpoints/_base.scss */
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  min-width: 50%;
+}
+
+/* line 104, ../sass/breakpoints/_base.scss */
+.nav__links__link {
+  padding: 20px;
+  font-family: Josefin Sans;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  color: #3C3C3C;
+}
+
+/**************************************************
+  Dashboard
+**************************************************/
+/* line 120, ../sass/breakpoints/_base.scss */
+.dashboard__header {
+  padding-bottom: 10px;
+  background-image: url("/input-bg1.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+/* line 127, ../sass/breakpoints/_base.scss */
+.dashboard__chart {
+  width: 90%;
+  margin-left: 3%;
+  margin-right: 7%;
+  margin-bottom: 30px;
+}
+
+/* line 134, ../sass/breakpoints/_base.scss */
+.dashboard__contents {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap-reverse;
+  padding-top: 40px;
+  background-image: url("/input-bg2.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* line 145, ../sass/breakpoints/_base.scss */
+.dashboard__polls {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 50%;
+}
+/* line 151, ../sass/breakpoints/_base.scss */
+.dashboard__polls h3 {
+  width: 100%;
+}
+/* line 155, ../sass/breakpoints/_base.scss */
+.dashboard__polls li {
+  width: 100%;
+  opacity: 0.8;
+}
+/* line 159, ../sass/breakpoints/_base.scss */
+.dashboard__polls li p {
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* line 176, ../sass/breakpoints/_base.scss */
+.create-poll {
+  margin-bottom: 30px;
+}
+
+/* line 180, ../sass/breakpoints/_base.scss */
+.optionTitleStyle {
+  margin-bottom: 0;
+}
+
+/**************************************************
+Polls List
+**************************************************/
+/* line 191, ../sass/breakpoints/_base.scss */
+.polls {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  width: 92%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 205, ../sass/breakpoints/_base.scss */
+.feed-poll {
+  width: 80%;
+  padding: 0% 0% 12% 0%;
+}
+/* line 209, ../sass/breakpoints/_base.scss */
+.feed-poll .feed-poll__title {
+  animation: easeUp 0.5s;
+  animation-fill-mode: forwards;
+}
+/* line 213, ../sass/breakpoints/_base.scss */
+.feed-poll .feed-poll__image--left img {
+  animation: easeRight 0.5s;
+  animation-fill-mode: forwards;
+}
+/* line 217, ../sass/breakpoints/_base.scss */
+.feed-poll .feed-poll__image--right img {
+  animation: easeLeft 0.5s;
+  animation-fill-mode: forwards;
+}
+/* line 223, ../sass/breakpoints/_base.scss */
+.feed-poll:hover .feed-poll__title {
+  animation: easeDown 1s ease-out;
+  animation-fill-mode: forwards;
+}
+/* line 227, ../sass/breakpoints/_base.scss */
+.feed-poll:hover .feed-poll__image--left img {
+  animation: easeLeft 1s ease-out;
+  animation-fill-mode: forwards;
+}
+/* line 231, ../sass/breakpoints/_base.scss */
+.feed-poll:hover .feed-poll__image--right img {
+  animation: easeRight 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* line 238, ../sass/breakpoints/_base.scss */
+.feed-poll__title {
+  position: relative;
+  width: 50%;
+  top: -10px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #ff2955;
+  border: 0.5px solid lightgray;
+  border-left: 4px solid #ff2955;
+}
+/* line 248, ../sass/breakpoints/_base.scss */
+.feed-poll__title span {
+  text-align: right;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 256, ../sass/breakpoints/_base.scss */
+.feed-poll__imageFlex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 41.37931vw;
+}
+
+/* line 265, ../sass/breakpoints/_base.scss */
+.feed-poll__image {
+  display: block;
+  max-height: 280px;
+  max-width: 100%;
+  box-shadow: 4px 4px 4px #CCC;
+  border-radius: 2px;
+  background-color: white;
+}
+/* line 273, ../sass/breakpoints/_base.scss */
+.feed-poll__image img {
+  max-width: 100%;
+}
+
+/* line 278, ../sass/breakpoints/_base.scss */
+.feed-poll__image--left {
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 80%;
+  max-height: 220px;
+  align-self: flex-start;
+  margin-right: -10%;
+}
+
+/* line 287, ../sass/breakpoints/_base.scss */
+.feed-poll__image--right {
+  max-width: 80%;
+  max-height: 220px;
+  align-self: flex-end;
+  margin-left: -10%;
+}
+
+/**************************************************
+  Current Poll
+**************************************************/
+/* line 299, ../sass/breakpoints/_base.scss */
+.current-poll {
+  margin-top: 0;
+  margin-bottom: 60;
+}
+
+/* line 304, ../sass/breakpoints/_base.scss */
+.current-poll__option {
+  width: 40%;
+  text-align: -webkit-center;
+}
+
+/* line 309, ../sass/breakpoints/_base.scss */
+.current-poll__image {
+  display: block;
+  margin-bottom: 20px;
+  max-height: 400px;
+  max-width: 90%;
+  width: auto;
+}
+
+/* line 317, ../sass/breakpoints/_base.scss */
+.current-poll__chart {
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 1, ../sass/breakpoints/_768up.scss */
+  .dashboard__chart {
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+
+  /* line 7, ../sass/breakpoints/_768up.scss */
+  .create-poll {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+
+  /* line 12, ../sass/breakpoints/_768up.scss */
+  .feed-poll {
+    width: 40%;
+  }
+
+  /* line 16, ../sass/breakpoints/_768up.scss */
+  .feed-poll__imageFlex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20.68966vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* line 1, ../sass/breakpoints/_1200up.scss */
+  .nav {
+    margin-bottom: 140px;
+  }
+
+  /* line 5, ../sass/breakpoints/_1200up.scss */
+  .dashboard__chart {
+    width: 80%;
+    max-width: 944px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 12, ../sass/breakpoints/_1200up.scss */
+  .dashboard__contents {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 18, ../sass/breakpoints/_1200up.scss */
+  .polls {
+    width: 84%;
+  }
+
+  /* line 22, ../sass/breakpoints/_1200up.scss */
+  .feed-poll {
+    padding: 0;
+    width: 28%;
+    height: 26%;
+  }
+
+  /* line 28, ../sass/breakpoints/_1200up.scss */
+  .feed-poll__imageFlex {
+    height: 13.40782vw;
+  }
+
+  /* line 33, ../sass/breakpoints/_1200up.scss */
+  .feed-poll__title span {
+    font-size: 1.53846vw;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  /* line 2, ../sass/breakpoints/_1440up.scss */
+  .feed-poll__title span {
+    font-size: 20px;
+  }
+}

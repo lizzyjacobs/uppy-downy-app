@@ -6,15 +6,6 @@ import { Doughnut } from 'react-chartjs-2'
 
 import Vote from './vote'
 import { showCurrentPoll, fetchPolls } from '../actions'
-import {
-  sideMargins,
-  pollContainerStyle,
-  pollOptionContainerStyle,
-  pollOptionImageStyle,
-  buttonContainerStyle,
-  buttonInputStyle,
-  doughnutStyle
-} from '../stylesheets/stylesheet'
 
 
 class Poll extends Component {
@@ -27,7 +18,7 @@ class Poll extends Component {
 
   componentWillMount(){
     this.props.fetchPolls()
-    const id = parseInt(this.props.params.id)
+    const id = parseInt(this.props.params.id, 10)
     this.props.showCurrentPoll(id)
   }
 
@@ -62,16 +53,16 @@ class Poll extends Component {
     if(this.hasVotesData()) {
       if (this.userHasVoted()) {
         return this.props.poll.poll_options.map( (option, i) =>
-          <div key={i} style={pollOptionContainerStyle}>
-            <img src={option.image} alt="" style={pollOptionImageStyle}/>
+          <div key={i} className="current-poll__option">
+            <img src={option.image} alt="" className="current-poll__image"/>
             <h3>{option.text}: {this.countVotesPercent(i)}% with {this.countVotes(i)} Vote(s)</h3>
           </div>
         )
       } else {
         return this.props.poll.poll_options.map( (option,i) =>
-          <div key={i} style={pollOptionContainerStyle}>
+          <div key={i} className="current-poll__option">
             <p>{option.text}</p>
-            <img src={option.image} alt="" style={pollOptionImageStyle}/>
+            <img src={option.image} alt="" className="current-poll__image"/>
             <Vote optionId={option.id}/>
           </div>
         )
@@ -114,16 +105,16 @@ class Poll extends Component {
   render(){
 
     return(
-      <div style={pollContainerStyle, sideMargins}>
+      <div className="current-poll sideMargins">
         <h2 style={{wordWrap:'break-word'}}>{this.props.poll.title}</h2>
         <Flexbox justifyContent='center' alignItems='center' style={{marginBottom:40}}>
           {this.chooseDisplay()}
         </Flexbox>
-        <div style={doughnutStyle}>
+        <div className="current-poll__chart">
           {this.displayChart()}
         </div>
-        <div style={buttonContainerStyle}>
-          <button onClick={this.handleNextClick.bind(this)} style={buttonInputStyle}>Next poll!</button>
+        <div className="button-container">
+          <button onClick={this.handleNextClick.bind(this)} className="button-container__input">Next poll!</button>
         </div>
       </div>
     )

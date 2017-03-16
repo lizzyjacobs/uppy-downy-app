@@ -1,0 +1,23 @@
+.dashboard__chart {
+  width: 80%;
+  margin-left: 5%;
+  margin-right: 10%;
+}
+
+.create-poll {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.feed-poll {
+  width: 40%;
+}
+
+.feed-poll__imageFlex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px/1160px * 100vw;
+}

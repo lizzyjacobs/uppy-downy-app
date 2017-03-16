@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.css';
+import './stylesheets/screen.css';
 import routes from './routes'
 import { Provider } from 'react-redux'
 import ReduxPromise from 'redux-promise'

@@ -1,0 +1,319 @@
+/****************************************************************************************************
+Base Styles
+****************************************************************************************************/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Josefin Sans, sans-serif;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button:active,
+button:focus,
+button:hover,
+input:active,
+input:focus,
+input:hover
+{
+  outline: none;
+}
+
+
+
+/****************************************************************************************************
+Component Styles
+****************************************************************************************************/
+
+.sideMargins {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.text-input {
+  margin: 20px;
+  width: 80%;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.text-input--1 {
+  background-image: url('/input-bg1.png');
+}
+
+.text-input--2 {
+  background-image: url('/input-bg2.png');
+}
+
+.button-container {
+  background-image: url('/btn-bg-grey.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.button-container__input {
+  background: none;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  color: gray;
+}
+
+
+
+/**************************************************
+  Nav Bar
+**************************************************/
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  padding: 30px 40px;
+  box-shadow: 0px 4px 4px #CCC;
+}
+
+.nav__logo {
+  margin-right: 8%;
+  font-family: Kaushan Script;
+  font-size: 40px;
+  color: #ff2955;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  min-width: 50%;
+}
+
+.nav__links__link {
+  padding: 20px;
+  font-family: Josefin Sans;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  color: #3C3C3C;
+}
+
+
+
+/**************************************************
+  Dashboard
+**************************************************/
+
+.dashboard__header {
+  padding-bottom: 10px;
+  background-image: url('/input-bg1.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.dashboard__chart {
+  width: 90%;
+  margin-left: 3%;
+  margin-right: 7%;
+  margin-bottom: 30px;
+}
+
+.dashboard__contents {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap-reverse;
+  padding-top: 40px;
+  background-image: url('/input-bg2.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.dashboard__polls {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 50%;
+
+  h3 {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    opacity: 0.8;
+
+    p {
+      width: 70%;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+  }
+
+}
+
+
+
+//****CreatePoll
+.create-poll {
+  margin-bottom: 30px;
+}
+
+.optionTitleStyle {
+  margin-bottom: 0;
+}
+
+
+
+/**************************************************
+Polls List
+**************************************************/
+
+//****PollsContainer
+.polls {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+
+  width: 92%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+//****PollsPoll
+.feed-poll {
+  width: 80%;
+  padding: 0% 0% 12% 0%;
+
+  .feed-poll__title {
+    animation: easeUp 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .feed-poll__image--left img {
+    animation: easeRight 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .feed-poll__image--right img {
+    animation: easeLeft 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  &:hover {
+    .feed-poll__title {
+      animation: easeDown 1s ease-out;
+      animation-fill-mode: forwards;
+    }
+    .feed-poll__image--left img {
+      animation: easeLeft 1s ease-out;
+      animation-fill-mode: forwards;
+    }
+    .feed-poll__image--right img {
+      animation: easeRight 1s ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.feed-poll__title {
+  position: relative;
+  width: 50%;
+  top: -10px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #ff2955;
+  border: 0.5px solid lightgray;
+  border-left: 4px solid #ff2955;
+
+  span {
+    text-align: right;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.feed-poll__imageFlex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px/580px * 100vw;
+}
+
+.feed-poll__image {
+  display: block;
+  max-height: 280px;
+  max-width: 100%;
+  box-shadow: 4px 4px 4px #CCC;
+  border-radius: 2px;
+  background-color: white;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.feed-poll__image--left {
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 80%;
+  max-height: 220px;
+  align-self: flex-start;
+  margin-right: -10%;
+}
+
+.feed-poll__image--right {
+  max-width: 80%;
+  max-height: 220px;
+  align-self: flex-end;
+  margin-left: -10%;
+}
+
+
+
+/**************************************************
+  Current Poll
+**************************************************/
+.current-poll {
+  margin-top: 0;
+  margin-bottom: 60
+}
+
+.current-poll__option {
+  width: 40%;
+  text-align: -webkit-center
+}
+
+.current-poll__image {
+  display: block;
+  margin-bottom: 20px;
+  max-height: 400px;
+  max-width: 90%;
+  width: auto;
+}
+
+.current-poll__chart {
+  margin-bottom: 20px;
+}
