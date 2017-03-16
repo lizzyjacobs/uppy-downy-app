@@ -5,12 +5,6 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
 import { fetchUser, logoutUser } from '../actions'
-import {
-  linksContainerStyle,
-  linkStyle,
-  navbarStyle,
-  logoStyle
-} from '../stylesheets/stylesheet'
 
 
 class NavBar extends Component {
