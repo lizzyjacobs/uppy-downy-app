@@ -6,9 +6,9 @@ import PollsContainer from './components/pollsContainer'
 import Poll from './components/poll'
 import Login from './components/userLogin'
 import Vote from './components/vote'
-// import UserPolls from './components/userPolls'
+// import DashboardPolls from './components/dashboardPolls'
 // import CreatePoll from './components/createPoll'
-import UserDashboard from './components/userDashboard'
+import DashboardContainer from './components/dashboardContainer'
 
 
 export default (
@@ -20,7 +20,7 @@ export default (
     <Route path="polls/:id" component={Poll}>
       <Route path="vote" component={Vote} />
     </Route>
-    <Route path="my-dashboard" component={UserDashboard} />
+    <Route path="my-dashboard" component={DashboardContainer} />
 
   </Route>
 )

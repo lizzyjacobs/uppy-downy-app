@@ -27,7 +27,7 @@ export const textInputStyle2 = {
   fontSize: '1rem',
 }
 
-export const headerStyle = {
+export const dashboard__header = {
   paddingBottom: 10,
   backgroundImage: `url('../../input-bg1.png')`,
   backgroundRepeat: 'no-repeat',

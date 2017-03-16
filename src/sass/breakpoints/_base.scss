@@ -39,7 +39,7 @@ Component Styles
   margin: 20px;
   width: 50%;
   padding: 10px;
-  background-image: url('%PUBLIC_URL%/input-bg1.png');
+  background-image: url('/public/input-bg1.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   border: none;
@@ -51,7 +51,7 @@ Component Styles
   margin: 20;
   width: 50%;
   padding: 10;
-  background-image: url('%PUBLIC_URL%/input-bg2.png');
+  background-image: url('/public/input-bg2.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   border: none;
@@ -59,17 +59,10 @@ Component Styles
   font-size: 1rem;
 }
 
-.headerStyle {
-  padding-bottom: 10;
-  background-image: url('%PUBLIC_URL%/input-bg1.png');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
 
 
 /**************************************************
-Nav Bar
+  Nav Bar
 **************************************************/
 
 .navbarStyle {
@@ -104,6 +97,25 @@ Nav Bar
   text-decoration: none;
   font-size: 24px;
   color: #3C3C3C;
+}
+
+
+
+/**************************************************
+  Dashboard
+**************************************************/
+
+.dashboard__header {
+  padding-bottom: 10;
+  background-image: url('/public/input-bg1.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.dashboard__contents {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
 
@@ -225,7 +237,7 @@ Polls List
 }
 
 .buttonContainerStyle {
-  background-image: url('%PUBLIC_URL%/btn-bg-grey.png');
+  background-image: url('/public/btn-bg-grey.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
