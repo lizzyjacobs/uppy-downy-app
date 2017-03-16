@@ -6,11 +6,15 @@ export default class DashboardPolls extends Component {
     let yours = this.props.yourPolls.map((poll,i) => {
       return(
         <li key={i} onClick={() => this.props.handleClick(poll.id)}>
-          {this.splicedPollTitle(poll.title)}
+          <p>
+            <span className="underline">{this.splicedPollTitle(poll.title)}</span>
+          </p>
         </li>
       )
     })
-    return yours
+    // debugger
+    return ( yours ? yours : "You have no polls" )
+    // return yours
   }
 
   splicedPollTitle(pollTitle){

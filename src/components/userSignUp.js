@@ -21,12 +21,12 @@ class UserSignUp extends Component {
       <div>
         <h2>Sign Up!</h2>
         <form onSubmit={this.handleSubmit}>
-          <input ref="name" placeholder="Enter Name" className="textInputStyle"/>
-          <input ref="email" placeholder="Enter Email" className="textInputStyle2"/>
-          <input type="password" ref="userPassword" placeholder="Enter Password" className="textInputStyle"/>
-          <input type="password" ref="passwordConfirmation" placeholder="Verify Password" className="textInputStyle2"/>
-          <div className="buttonContainerStyle">
-            <button type="submit" className="buttonInputStyle">Submit</button>
+          <input ref="name" placeholder="Enter Name" className="text-input text-input--1"/>
+          <input ref="email" placeholder="Enter Email" className="text-input text-input--2"/>
+          <input type="password" ref="userPassword" placeholder="Enter Password" className="text-input text-input--1"/>
+          <input type="password" ref="passwordConfirmation" placeholder="Verify Password" className="text-input text-input--2"/>
+          <div className="button-container">
+            <button type="submit" className="button-container__input">Submit</button>
           </div>
         </form>
       </div>

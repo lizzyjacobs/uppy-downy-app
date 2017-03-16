@@ -22,16 +22,16 @@ class NavBar extends Component {
   showLinks(){
     if (this.props.user.name){
       return (
-        <div className="linksContainerStyle">
-          <Link to='/polls' className="linkStyle">Polls</Link>
-          <Link to='/my-dashboard' className="linkStyle">Dashboard</Link>
-          <Link to='/login' onClick={this.handleLogout.bind(this)} className="linkStyle">Logout</Link>
+        <div className="nav__links">
+          <Link to='/polls' className="nav__links__link">Polls</Link>
+          <Link to='/my-dashboard' className="nav__links__link">Dashboard</Link>
+          <Link to='/login' onClick={this.handleLogout.bind(this)} className="nav__links__link">Logout</Link>
         </div>
       )
     } else {
       return (
-        <div className="linksContainerStyle">
-          <Link to='/login' className="linkStyle">Login/Sign Up</Link>
+        <div className="nav__links">
+          <Link to='/login' className="nav__links__link">Login/Sign Up</Link>
         </div>
       )
     }
@@ -39,8 +39,8 @@ class NavBar extends Component {
 
   render(){
     return (
-      <nav className="navbarStyle">
-        <Link to="/polls" className="logoStyle">This/That</Link>
+      <nav className="nav">
+        <Link to="/polls" className="nav__logo">This/That</Link>
         {this.showLinks()}
       </nav>
     )

@@ -18,8 +18,8 @@ class Vote extends Component {
 
   render(){
     return(
-      <form onSubmit={this.handleVote.bind(this)} className="buttonContainerStyle">
-        <input type='submit' value='Cast Vote' className="buttonInputStyle"/>
+      <form onSubmit={this.handleVote.bind(this)} className="button-container">
+        <input type='submit' value='Cast Vote' className="button-container__input"/>
       </form>
     )
   }

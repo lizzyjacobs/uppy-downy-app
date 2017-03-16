@@ -113,8 +113,8 @@ class Poll extends Component {
         <div className="current-poll__chart">
           {this.displayChart()}
         </div>
-        <div className="buttonContainerStyle">
-          <button onClick={this.handleNextClick.bind(this)} className="buttonInputStyle">Next poll!</button>
+        <div className="button-container">
+          <button onClick={this.handleNextClick.bind(this)} className="button-container__input">Next poll!</button>
         </div>
       </div>
     )

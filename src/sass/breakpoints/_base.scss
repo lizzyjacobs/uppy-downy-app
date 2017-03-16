@@ -35,11 +35,10 @@ Component Styles
   margin-right: 100px;
 }
 
-.textInputStyle {
+.text-input {
   margin: 20px;
-  width: 50%;
+  width: 80%;
   padding: 10px;
-  background-image: url('/input-bg1.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   border: none;
@@ -47,16 +46,29 @@ Component Styles
   font-size: 1rem;
 }
 
-.textInputStyle2 {
-  margin: 20px;
-  width: 50%;
-  padding: 10px;
+.text-input--1 {
+  background-image: url('/input-bg1.png');
+}
+
+.text-input--2 {
   background-image: url('/input-bg2.png');
+}
+
+.button-container {
+  background-image: url('/btn-bg-grey.png');
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-size: contain;
+  background-position: center;
+}
+
+.button-container__input {
+  background: none;
+  margin: 10px;
+  padding: 10px;
   border: none;
   text-align: center;
   font-size: 1rem;
+  color: gray;
 }
 
 
@@ -65,7 +77,7 @@ Component Styles
   Nav Bar
 **************************************************/
 
-.navbarStyle {
+.nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -74,7 +86,7 @@ Component Styles
   box-shadow: 0px 4px 4px #CCC;
 }
 
-.logoStyle {
+.nav__logo {
   margin-right: 8%;
   font-family: Kaushan Script;
   font-size: 40px;
@@ -82,14 +94,14 @@ Component Styles
   text-decoration: none;
 }
 
-.linksContainerStyle {
+.nav__links {
   display: flex;
   justify-content: flex-end;
   align-self: center;
   min-width: 50%;
 }
 
-.linkStyle {
+.nav__links__link {
   padding: 20px;
   font-family: Josefin Sans;
   font-weight: bold;
@@ -112,16 +124,61 @@ Component Styles
   background-position: center bottom;
 }
 
+.dashboard__chart {
+  width: 90%;
+  margin-left: 3%;
+  margin-right: 7%;
+  margin-bottom: 30px;
+}
+
 .dashboard__contents {
   display: flex;
   justify-content: space-around;
   align-content: center;
+  flex-wrap: wrap-reverse;
+  padding-top: 40px;
+  background-image: url('/input-bg2.png');
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .dashboard__polls {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
-  width: 30%;
+  width: 50%;
+
+  h3 {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    opacity: 0.8;
+
+    p {
+      width: 70%;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+  }
+
+}
+
+
+
+//****CreatePoll
+.create-poll {
+  margin-bottom: 30px;
+}
+
+.optionTitleStyle {
+  margin-bottom: 0;
 }
 
 
@@ -232,31 +289,6 @@ Polls List
   max-height: 220px;
   align-self: flex-end;
   margin-left: -10%;
-}
-
-
-
-
-//****CreatePoll
-.optionTitleStyle {
-  margin-bottom: 0;
-}
-
-.buttonContainerStyle {
-  background-image: url('/btn-bg-grey.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.buttonInputStyle {
-  background: none;
-  margin: 10px;
-  padding: 10px;
-  border: none;
-  text-align: center;
-  font-size: 1rem;
-  color: gray;
 }
 
 

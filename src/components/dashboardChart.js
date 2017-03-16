@@ -68,7 +68,7 @@ export default class DashboardChart extends Component {
 
   render() {
     return (
-      <div className="sideMargins">
+      <div className="dashboard__chart">
         {this.displayChart()}
       </div>
     )

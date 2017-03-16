@@ -31,14 +31,14 @@ class Login extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='email' ref='email' className="textInputStyle"/>
-          <input type='password' placeholder='password' ref='password' className="textInputStyle2"/>
-          <div className="buttonContainerStyle">
-            <button type='submit' className="buttonInputStyle">Login</button>
+          <input type='text' placeholder='email' ref='email' className="text-input text-input--1"/>
+          <input type='password' placeholder='password' ref='password' className="text-input text-input--2"/>
+          <div className="button-container">
+            <button type='submit' className="button-container__input">Login</button>
           </div>
         </form>
-        <div className="buttonContainerStyle">
-          <button to='/signup' onClick={this.redirectToSignUp} className="buttonInputStyle">Sign Up</button>
+        <div className="button-container">
+          <button to='/signup' onClick={this.redirectToSignUp} className="button-container__input">Sign Up</button>
         </div>
       </div>
     );
