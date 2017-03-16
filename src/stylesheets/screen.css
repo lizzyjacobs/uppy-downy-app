@@ -42,7 +42,7 @@
   content: '';
   display: block;
   position: absolute;
-  left: -10%;
+  left: -5%;
   bottom: 0;
   height: 3px;
   width: 0;
@@ -55,7 +55,7 @@
   content: '';
   display: block;
   position: absolute;
-  right: -10%;
+  right: -5%;
   bottom: 0;
   height: 3px;
   width: 0;
@@ -66,14 +66,14 @@
 
 /* line 73, ../sass/partials/_animations.scss */
 .underline:hover:before {
-  width: 120%;
+  width: 110%;
   background: #ff2955;
   transition: width 1s ease;
 }
 
 /* line 78, ../sass/partials/_animations.scss */
 .underline:hover:after {
-  width: 120%;
+  width: 110%;
   background: transparent;
   transition: all 0s ease;
 }

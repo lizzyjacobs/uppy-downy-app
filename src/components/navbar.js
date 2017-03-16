@@ -23,9 +23,9 @@ class NavBar extends Component {
     if (this.props.user.name){
       return (
         <div className="nav__links">
-          <Link to='/polls' className="nav__links__link">Polls</Link>
-          <Link to='/my-dashboard' className="nav__links__link">Dashboard</Link>
-          <Link to='/login' onClick={this.handleLogout.bind(this)} className="nav__links__link">Logout</Link>
+          <Link to='/polls' className="nav__links__link"><span className="underline">Polls</span></Link>
+          <Link to='/my-dashboard' className="nav__links__link"><span className="underline">Dashboard</span></Link>
+          <Link to='/login' onClick={this.handleLogout.bind(this)} className="nav__links__link"><span className="underline">Logout</span></Link>
         </div>
       )
     } else {
